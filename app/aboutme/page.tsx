@@ -19,8 +19,8 @@ export default function AboutMe() {
             <div className='test'>
                 <h3 className='text-center mt-12 text-3xl font-medium underline underline-offset-8 decoration-2 decoration-[#F9F871]'>Mes expériences :</h3>
                 <div className='flex flex-row justify-around'>
-                    <Card title="Les restos du cœur" description="I did an intership in this french charity." />
-                    <Card title="Mes projets" description="I did a lot of projects on my own in differents languages like HTML/JS/CSS, NextJS, C or Java. You can see them on my Github." />
+                    <Card title="Les restos du cœur" description="J'ai eu l'occasion de faire un stage de 2 mois dans le but de développer un site en interne." />
+                    <Card title="Mes projets" description="J'ai fait beaucoup de projets par moi-même dans différents langages comme HTML/JS/CSS, NextJS, C or Java. Ils sont disponibles sur mon Github." />
                 </div>
             </div>
         </main>
