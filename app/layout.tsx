@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
 import "./globals.css";
+import Menu from "./menu";
 
-const inter = Inter({ subsets: ["latin"] });
+const garamond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ['400', '500', '600', '700', '800']
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={garamond.className}>
+        <Menu />
+        {children}
+      </body>
     </html>
   );
 }
