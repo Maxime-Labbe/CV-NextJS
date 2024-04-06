@@ -8,7 +8,7 @@ export default function AboutMe() {
             </div>
             <div className='test'>
                 <h3 className='text-center mt-12 text-3xl font-medium underline underline-offset-8 decoration-2 decoration-[#F9F871]'>Mes compétences techniques :</h3>
-                <div className='flex flex-row justify-around wrap'>
+                <div className='flex flex-row flex-wrap justify-around wrap'>
                     <Card title="HTML/CSS/JS" description="Je suis bon au développement web avec HTML/CSS/JS. J'ai déjà eu l'occasion de faire quelques sites pour des projets personnels." />
                     <Card title="NextJS" description="Je suis toujours en train d'apprendre NextJS." />
                     <Card title="C" description="J'ai déjà fait du développement en C. Je connais les bases du langage et j'ai également quelques connaissances plus avancées. J'ai déjà également utilisé SDL2." />
@@ -18,7 +18,7 @@ export default function AboutMe() {
             </div>
             <div className='test'>
                 <h3 className='text-center mt-12 text-3xl font-medium underline underline-offset-8 decoration-2 decoration-[#F9F871]'>Mes expériences :</h3>
-                <div className='flex flex-row justify-around'>
+                <div className='flex flex-row flex-wrap justify-around'>
                     <Card title="Les restos du cœur" description="J'ai eu l'occasion de faire un stage de 2 mois dans le but de développer un site en interne." />
                     <Card title="Mes projets" description="J'ai fait beaucoup de projets par moi-même dans différents langages comme HTML/JS/CSS, NextJS, C or Java. Ils sont disponibles sur mon Github." />
                 </div>

@@ -13,7 +13,7 @@ body {
   width: 100%;
 }
 
-.menu a {
+.menu li {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -22,12 +22,13 @@ body {
   font-weight: 500;
 }
 
-.menu a:hover {
+.menu li:hover {
   background-size: 0 2px, 100% 2px;
   cursor: pointer;
 }
 
 .card {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   width: 170px;
@@ -50,7 +51,7 @@ body {
     margin-top: 80px;
   }
 
-  .menu a {
+  .menu li {
     font-size: 1.3rem;
     background-image: linear-gradient(rgba(239, 233, 231, 0), rgba(239, 233, 231, 0)),
       linear-gradient(rgba(249, 248, 113, 1), rgba(249, 248, 113, 1));
