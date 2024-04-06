@@ -20,7 +20,7 @@ export default function Card({
     return (
         <div className="card group">
             <h2 className="text-center mx-auto mt-[10px] text-[25px] sm:text-4xl font-bold sm:text-transparent sm:group-hover:text-[#EEEDFF]">{title}</h2>
-            <p className="w-11/12 text-center absolute left-3 mt-4 sm:mt-2 text-base sm:text-xl font-normal sm:text-transparent sm:group-hover:text-[#EEEDFF]">{description}</p>
+            <p className="w-11/12 text-center ml-2 absolute mt-4 sm:mt-2 text-base sm:text-xl font-normal sm:text-transparent sm:group-hover:text-[#EEEDFF]">{description}</p>
             {titleHTML}
         </div>
     )

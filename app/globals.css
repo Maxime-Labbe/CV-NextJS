@@ -43,6 +43,43 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
+.typing-effect {
+  animation: letters, blink .5s step-end alternate;
+  animation-fill-mode: forwards;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  opacity: 0;
+}
+
+@keyframes letters {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+
+  99% {
+    border-color: #888;
+  }
+
+  100% {
+    opacity: 1;
+    border-color: transparent;
+  }
+}
+
+.cmd p {
+  margin-left: 8px;
+}
+
+.cmd p:nth-child(1):before {
+  content: "> ";
+}
+
+.cmd p::before {
+  content: "C:\\> ";
+}
+
 @media (min-width: 640px) {
   .card {
     min-width: 300px;
@@ -107,6 +144,12 @@ body {
     margin-bottom: 100px;
     animation: linear slide-from-left both;
     animation-timeline: view();
+    animation-range: entry 25% cover 35%;
+  }
+}
+
+@media (min-width: 900px) {
+  .test {
     animation-range: entry 25% cover 45%;
   }
 }
