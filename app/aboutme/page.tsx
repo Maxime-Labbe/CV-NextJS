@@ -15,7 +15,11 @@ export default function AboutMe() {
             const $cmd = document.querySelector('.cmd');
             const $inputs = document.querySelectorAll('input');
             const firstElement = document.createElement('p');
-            $cmd.appendChild(firstElement);
+            if ($cmd) {
+                $cmd.appendChild(firstElement);
+            } else {
+                console.log('Element with class cmd not found !');
+            }
         }
     }, []);
 
