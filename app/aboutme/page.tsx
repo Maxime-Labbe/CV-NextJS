@@ -13,7 +13,7 @@ const cascadiaMonoBold = localFont({ src: '../../fonts/CascadiaMono-Bold.ttf' })
 export default function AboutMe() {
 
     const [textareas, setTextareas] = useState([<textarea key={0} autoFocus={true} onInput={handleInputChange} onKeyDown={handleKeyDown} placeholder='C:\Users\Maxime>' style={{ height: '24px' }}></textarea>]);
-    const [paragraphs, setParagraphs] = useState([<div style={{ animationDelay: '1.2s', animationDuration: '3s', width: '100ch', animationTimingFunction: 'steps(100)' }} className='typing-effect'><p key={0} >{"Pour obtenir des informations, tapez ce que vous recherchez (pour en savoir plus tapez 'help')."}</p></div>]);
+    const [paragraphs, setParagraphs] = useState([<div key={0} style={{ animationDelay: '1.2s', animationDuration: '3s', width: '100ch', animationTimingFunction: 'steps(100)' }} className='typing-effect'><p key={0} >{"Pour obtenir des informations, tapez ce que vous recherchez (pour en savoir plus tapez 'help')."}</p></div>]);
     const [showTextareas, setShowTextareas] = useState(false);
     const textToShow: { [key: string]: JSX.Element } = {
         help: (
