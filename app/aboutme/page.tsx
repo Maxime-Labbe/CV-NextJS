@@ -5,6 +5,7 @@ import Card from '../card';
 import localFont from "next/font/local";
 import { notFound } from 'next/navigation';
 import { text } from 'stream/consumers';
+import React from 'react';
 
 const cascadiaMono = localFont({ src: '../../fonts/CascadiaMono.ttf' });
 const cascadiaMonoBold = localFont({ src: '../../fonts/CascadiaMono-Bold.ttf' });
@@ -143,10 +144,10 @@ export default function AboutMe() {
                 </div>
                 <div className='text-sm cmd leading-6'>
                     {paragraphs.map((paragraph, index) => (
-                        <>
+                        <React.Fragment key={index}>
                             {paragraph}
                             {showTextareas && textareas[index]}
-                        </>
+                        </React.Fragment>
                     ))}
                 </div>
             </div>
