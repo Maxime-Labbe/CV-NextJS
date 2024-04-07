@@ -68,8 +68,28 @@ body {
   }
 }
 
-.cmd p {
-  margin-left: 8px;
+.cmd div p {
+  max-width: 98.5%;
+  display: inline-block;
+  padding-left: 10px;
+  animation: letters, blink .5s step-end alternate;
+  animation-fill-mode: forwards;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  opacity: 0;
+}
+
+.cmd div p:nth-child(1) {
+  padding-left: 22px;
+}
+
+.cmd div br+p {
+  padding-left: 22px;
+}
+
+.cmd div p:nth-child(n+2) {
+  margin-top: -10px;
 }
 
 .cmd textarea {
@@ -93,8 +113,10 @@ body {
   outline: none;
 }
 
-.cmd p::before {
+.cmd div::before {
   content: "> ";
+  position: absolute;
+  left: calc(17% + 2px);
 }
 
 @media (min-width: 640px) {
