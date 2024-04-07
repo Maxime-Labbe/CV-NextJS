@@ -72,12 +72,29 @@ body {
   margin-left: 8px;
 }
 
-.cmd p:nth-child(1):before {
-  content: "> ";
+.cmd textarea {
+  width: 98.5%;
+  height: 24px;
+  margin-left: 8px;
+  caret-color: white;
+  color: white;
+  background-color: black;
+  resize: none;
+  margin-bottom: -4px;
+  margin-left: 8px;
+}
+
+.cmd textarea::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.cmd textarea:focus {
+  outline: none;
 }
 
 .cmd p::before {
-  content: "C:\\> ";
+  content: "> ";
 }
 
 @media (min-width: 640px) {

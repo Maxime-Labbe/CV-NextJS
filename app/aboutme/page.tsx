@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import Card from '../card';
 import localFont from "next/font/local";
+import { Autour_One } from 'next/font/google';
 
 const cascadiaMono = localFont({ src: '../../fonts/CascadiaMono.ttf' });
 const cascadiaMonoBold = localFont({ src: '../../fonts/CascadiaMono-Bold.ttf' });
@@ -11,15 +12,32 @@ export default function AboutMe() {
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            console.log('aa')
             const $cmd = document.querySelector('.cmd');
-            const $inputs = document.querySelectorAll('input');
-            const firstElement = document.createElement('p');
-            if ($cmd) {
-                $cmd.appendChild(firstElement);
-            } else {
-                console.log('Element with class cmd not found !');
-            }
+            setTimeout(() => {
+                const firstElement = document.createElement('textarea');
+                firstElement.placeholder = 'C:\\Users\\Maxime> ';
+                firstElement.autofocus = true;
+                if ($cmd) {
+                    $cmd.appendChild(firstElement);
+                    $cmd.appendChild(document.createElement('br'));
+                } else {
+                    console.log('Element with class cmd not found !');
+                }
+                const $textareas = document.querySelectorAll('textarea');
+                $textareas.forEach(textarea => {
+                    textarea.addEventListener('input', () => {
+                        if (!textarea.value.startsWith('C:\\Users\\Maxime>')) {
+                            textarea.value = 'C:\\Users\\Maxime>';
+                        }
+                        textarea.style.height = 'auto';
+                        if (textarea.scrollHeight == 48) {
+                            textarea.style.height = textarea.scrollHeight - 24 + 'px';
+                        }
+                        textarea.style.height = textarea.scrollHeight + 'px';
+                    });
+                });
+            }, 3000);
+
         }
     }, []);
 
@@ -29,8 +47,8 @@ export default function AboutMe() {
                 <div className='text-center'>
                     <h3 className='inline-block typing-effect ml-auto mt-4 text-xl' style={{ animationDelay: '0s', animationDuration: '1s', width: '14ch', animationTimingFunction: 'steps(13)' }}>QUI SUIS-JE ?</h3>
                 </div>
-                <div className='text-sm cmd'>
-                    <p className='typing-effect' style={{ animationDelay: '1.2s', animationDuration: '3s', width: '94ch', animationTimingFunction: 'steps(94)' }}>{"Pour obtenir des informations, tapez ce que vous recherchez (pour plus d'aide tapez 'help')."}</p>
+                <div className='text-sm cmd leading-6'>
+                    <p className='typing-effect' style={{ animationDelay: '1.2s', animationDuration: '3s', width: '97ch', animationTimingFunction: 'steps(97)' }}>{"Pour obtenir des informations, tapez ce que vous recherchez (pour en savoir plus tapez 'help')."}</p>
                 </div>
             </div>
             <div className='test'>
