@@ -36,7 +36,7 @@ export default function AboutMe() {
                         textarea.style.height = textarea.scrollHeight + 'px';
                     });
                 });
-            }, 3000);
+            }, 4500);
 
         }
     }, []);
