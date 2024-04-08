@@ -97,6 +97,10 @@ body {
   opacity: 1;
 }
 
+.cmd textarea:disabled {
+  color: white;
+}
+
 .cmd textarea::before {
   content: 'C:\\Users\\Maxime> ';
 }
@@ -196,11 +200,30 @@ body {
 }
 
 @media (max-width:640px) {
-  .cmd div {
-    margin-bottom: -12px;
+  @keyframes letters {
+    0% {
+      width: 0;
+      opacity: 1;
+      overflow: hidden;
+    }
+
+    99% {
+      border-color: #888;
+    }
+
+    100% {
+      opacity: 1;
+      border-color: transparent;
+      overflow: visible;
+    }
   }
 
-  .cmd p {
-    margin-top: -7px;
+  .cmd div:not(:first-child) {
+    margin-top: -10px;
+  }
+
+  .cmd textarea {
+    margin-top: -5px;
+    margin-left: 5px;
   }
 }

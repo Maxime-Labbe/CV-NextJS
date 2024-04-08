@@ -167,7 +167,7 @@ export default function AboutMe() {
 
     return (
         <main>
-            <div className={`bg-black xl:w-2/3 md:w-4/5 w-11/12 lg:h-[600px] md:h-[500px] sm:h-[450px] h-[250px] mx-auto mt-16 rounded-xl ${cascadiaMono.className} overflow-auto`}>
+            <div className={`bg-black xl:w-2/3 md:w-4/5 w-11/12 lg:h-[600px] md:h-[500px] sm:h-[450px] h-[300px] mx-auto mt-16 rounded-xl ${cascadiaMono.className} overflow-auto sm:overflow-y-auto`}>
                 <div className='text-center'>
                     <h2 className='inline-block typing-effect ml-auto mt-4 lg:text-xl md:text-lg sm:text-base text-sm' style={{ animationDelay: '0s', animationDuration: '1s', width: '14ch', animationTimingFunction: 'steps(13)' }}>QUI SUIS-JE ?</h2>
                 </div>
