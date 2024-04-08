@@ -208,6 +208,7 @@ body {
     }
 
     99% {
+      overflow: hidden;
       border-color: #888;
     }
 
