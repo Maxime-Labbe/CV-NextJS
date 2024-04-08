@@ -13,7 +13,7 @@ const cascadiaMonoBold = localFont({ src: '../../fonts/CascadiaMono-Bold.ttf' })
 export default function AboutMe() {
 
     const [textareas, setTextareas] = useState([<textarea key={'firstElem'} autoFocus={true} onInput={handleInputChange} onKeyDown={handleKeyDown} placeholder='C:\Users\Maxime>' style={{ height: '24px' }}></textarea>]);
-    const [paragraphs, setParagraphs] = useState([<div key={'firstPara'} style={{ animationDelay: '1.2s', animationDuration: '3s', width: '100ch', animationTimingFunction: 'steps(100)' }} className='typing-effect'><p key={0} >{"Pour obtenir des informations, tapez ce que vous recherchez (pour en savoir plus tapez 'help')."}</p></div>]);
+    const [paragraphs, setParagraphs] = useState([<div key={'firstPara'} style={{ animationDelay: '1.2s', animationDuration: '2s', width: '65ch', animationTimingFunction: 'steps(65)' }} className='typing-effect'><p key={0} >{"Tapez 'help' pour obtenir des informations sur les commandes."}</p></div>]);
     const [showTextareas, setShowTextareas] = useState(false);
     const textToShow: { [key: string]: JSX.Element } = {
         help: (
@@ -28,17 +28,17 @@ export default function AboutMe() {
         ls: (
             <>
                 <p style={{ animationDelay: '0ms', animationDuration: '900ms', width: '16ch', animationTimingFunction: 'steps(16)' }}>presentation</p>
-                <p style={{ animationDelay: '900ms', animationDuration: '500ms', width: '10ch', animationTimingFunction: 'steps(11)' }}>qualites</p>
-                <p style={{ animationDelay: '1400ms', animationDuration: '500ms', width: '10ch', animationTimingFunction: 'steps(10)' }}>hobbies</p>
+                <p style={{ animationDelay: '950ms', animationDuration: '500ms', width: '10ch', animationTimingFunction: 'steps(10)' }}>qualites</p>
+                <p style={{ animationDelay: '1500ms', animationDuration: '500ms', width: '8ch', animationTimingFunction: 'steps(8)' }}>hobbies</p>
             </>
         ),
         presentation: (
             <>
-                <p style={{ animationDelay: '0ms', animationDuration: '3000ms', width: '94ch', animationTimingFunction: 'steps(94)' }}>Je suis Maxime, j'ai 18 ans et je suis un développeur junior passionné par l'informatique.</p>
+                <p style={{ animationDelay: '0ms', animationDuration: '2700ms', width: '80ch', animationTimingFunction: 'steps(80)' }}>Je suis Maxime et je suis un jeune développeur passionné par l'informatique.</p>
                 <br />
-                <p style={{ animationDelay: '3000ms', animationDuration: '1800ms', width: '51ch', animationTimingFunction: 'steps(51)' }}>Je suis actuellement étudiant à ENIGMA-SCHOOL.</p>
+                <p style={{ animationDelay: '2700ms', animationDuration: '1800ms', width: '51ch', animationTimingFunction: 'steps(51)' }}>Je suis actuellement étudiant à ENIGMA-SCHOOL.</p>
                 <br />
-                <p style={{ animationDelay: '4800ms', animationDuration: '2500ms', width: '71ch', animationTimingFunction: 'steps(71)' }}>Je suis à la recherche d'un stage en développement pour juin 2024.</p>
+                <p style={{ animationDelay: '4500ms', animationDuration: '2500ms', width: '71ch', animationTimingFunction: 'steps(71)' }}>Je suis à la recherche d'un stage en développement pour juin 2025.</p>
             </>
         ),
         qualites: (
@@ -70,7 +70,7 @@ export default function AboutMe() {
     useEffect(() => {
         setTimeout(() => {
             setShowTextareas(true);
-        }, 4250);
+        }, 3250);
     }, []);
 
     function createTextarea(key: any) {
@@ -147,11 +147,11 @@ export default function AboutMe() {
                 };
             });
         };
-        if (e.key === 'ArrowUp') {
+        if (e.key === 'ArrowUp' && history.length > 0) {
             if (indexInHistory > 0) {
                 textarea.value = 'C:\\Users\\Maxime>' + history[indexInHistory];
                 indexInHistory--;
-            } else {
+            } else if (indexInHistory === 0) {
                 textarea.value = 'C:\\Users\\Maxime>' + history[0];
             }
         };
@@ -167,11 +167,11 @@ export default function AboutMe() {
 
     return (
         <main>
-            <div className={`bg-black w-2/3 h-[600px] mx-auto mt-16 rounded-xl ${cascadiaMono.className} overflow-auto`}>
+            <div className={`bg-black xl:w-2/3 md:w-4/5 w-11/12 lg:h-[600px] md:h-[500px] sm:h-[450px] h-[250px] mx-auto mt-16 rounded-xl ${cascadiaMono.className} overflow-auto`}>
                 <div className='text-center'>
-                    <h2 className='inline-block typing-effect ml-auto mt-4 text-xl' style={{ animationDelay: '0s', animationDuration: '1s', width: '14ch', animationTimingFunction: 'steps(13)' }}>QUI SUIS-JE ?</h2>
+                    <h2 className='inline-block typing-effect ml-auto mt-4 lg:text-xl md:text-lg sm:text-base text-sm' style={{ animationDelay: '0s', animationDuration: '1s', width: '14ch', animationTimingFunction: 'steps(13)' }}>QUI SUIS-JE ?</h2>
                 </div>
-                <div className='text-sm cmd leading-6'>
+                <div className='lg:text-sm sm:text-xs text-2xs cmd leading-6'>
                     {paragraphs.map((paragraph, index) => (
                         <React.Fragment key={index}>
                             {paragraph}

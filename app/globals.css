@@ -71,7 +71,7 @@ body {
 .cmd div p {
   max-width: 98.5%;
   display: inline-block;
-  padding-left: 10px;
+  padding-left: 0px;
   animation: letters, blink .5s step-end alternate;
   animation-fill-mode: forwards;
   white-space: nowrap;
@@ -80,14 +80,10 @@ body {
   opacity: 0;
 }
 
-.cmd div p:nth-child(n+2) {
-  margin-top: -10px;
-}
-
 .cmd textarea {
   width: 98.5%;
   height: 24px;
-  margin-left: 8px;
+  margin-left: -5px;
   caret-color: white;
   color: white;
   background-color: black;
@@ -101,16 +97,22 @@ body {
   opacity: 1;
 }
 
+.cmd textarea::before {
+  content: 'C:\\Users\\Maxime> ';
+}
+
 .cmd textarea:focus {
   outline: none;
 }
 
 .cmd p:nth-child(1)::before {
   content: "> ";
+  padding-left: 5px;
 }
 
 .cmd br+p::before {
   content: "> ";
+  padding-left: 5px;
 }
 
 @media (min-width: 640px) {
@@ -184,5 +186,21 @@ body {
 @media (min-width: 900px) {
   .test {
     animation-range: entry 25% cover 45%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cmd p {
+    margin-top: -8px;
+  }
+}
+
+@media (max-width:640px) {
+  .cmd div {
+    margin-bottom: -12px;
+  }
+
+  .cmd p {
+    margin-top: -7px;
   }
 }
