@@ -12,49 +12,49 @@ const cascadiaMonoBold = localFont({ src: '../../fonts/CascadiaMono-Bold.ttf' })
 
 export default function AboutMe() {
 
-    const [textareas, setTextareas] = useState([<textarea key={0} autoFocus={true} onInput={handleInputChange} onKeyDown={handleKeyDown} placeholder='C:\Users\Maxime>' style={{ height: '24px' }}></textarea>]);
-    const [paragraphs, setParagraphs] = useState([<div key={0} style={{ animationDelay: '1.2s', animationDuration: '3s', width: '100ch', animationTimingFunction: 'steps(100)' }} className='typing-effect'><p key={0} >{"Pour obtenir des informations, tapez ce que vous recherchez (pour en savoir plus tapez 'help')."}</p></div>]);
+    const [textareas, setTextareas] = useState([<textarea key={'firstElem'} autoFocus={true} onInput={handleInputChange} onKeyDown={handleKeyDown} placeholder='C:\Users\Maxime>' style={{ height: '24px' }}></textarea>]);
+    const [paragraphs, setParagraphs] = useState([<div key={'firstPara'} style={{ animationDelay: '1.2s', animationDuration: '3s', width: '100ch', animationTimingFunction: 'steps(100)' }} className='typing-effect'><p key={0} >{"Pour obtenir des informations, tapez ce que vous recherchez (pour en savoir plus tapez 'help')."}</p></div>]);
     const [showTextareas, setShowTextareas] = useState(false);
     const textToShow: { [key: string]: JSX.Element } = {
         help: (
             <>
-                <p style={{ animationDelay: '0ms', animationDuration: '1950ms', width: '42ch', animationTimingFunction: 'steps(42)' }}>help: affiche les commandes disponibles</p>
+                <p style={{ animationDelay: '0ms', animationDuration: '1950ms', width: '43ch', animationTimingFunction: 'steps(43)' }}>help: affiche les commandes disponibles</p>
                 <br />
-                <p style={{ animationDelay: '2000ms', animationDuration: '2400ms', width: '56ch', animationTimingFunction: 'steps(56)' }}>[nom]: permet d'afficher l'information associé au nom</p>
+                <p style={{ animationDelay: '2000ms', animationDuration: '2400ms', width: '57ch', animationTimingFunction: 'steps(57)' }}>[nom]: permet d'afficher l'information associé au nom</p>
                 <br />
-                <p style={{ animationDelay: '4400ms', animationDuration: '2250ms', width: '52ch', animationTimingFunction: 'steps(52)' }}>ls: permet de lister les informations disponibles</p>
+                <p style={{ animationDelay: '4400ms', animationDuration: '2250ms', width: '53ch', animationTimingFunction: 'steps(53)' }}>ls: permet de lister les informations disponibles</p>
             </>
         ),
         ls: (
             <>
-                <p style={{ animationDelay: '0ms', animationDuration: '900ms', width: '15ch', animationTimingFunction: 'steps(15)' }}>presentation</p>
+                <p style={{ animationDelay: '0ms', animationDuration: '900ms', width: '16ch', animationTimingFunction: 'steps(16)' }}>presentation</p>
                 <p style={{ animationDelay: '900ms', animationDuration: '500ms', width: '10ch', animationTimingFunction: 'steps(11)' }}>qualites</p>
                 <p style={{ animationDelay: '1400ms', animationDuration: '500ms', width: '10ch', animationTimingFunction: 'steps(10)' }}>hobbies</p>
             </>
         ),
         presentation: (
             <>
-                <p style={{ animationDelay: '0ms', animationDuration: '3000ms', width: '93ch', animationTimingFunction: 'steps(95)' }}>Je suis Maxime, j'ai 18 ans et je suis un développeur junior passionné par l'informatique.</p>
+                <p style={{ animationDelay: '0ms', animationDuration: '3000ms', width: '94ch', animationTimingFunction: 'steps(94)' }}>Je suis Maxime, j'ai 18 ans et je suis un développeur junior passionné par l'informatique.</p>
                 <br />
-                <p style={{ animationDelay: '3000ms', animationDuration: '1800ms', width: '50ch', animationTimingFunction: 'steps(50)' }}>Je suis actuellement étudiant à ENIGMA-SCHOOL.</p>
+                <p style={{ animationDelay: '3000ms', animationDuration: '1800ms', width: '51ch', animationTimingFunction: 'steps(51)' }}>Je suis actuellement étudiant à ENIGMA-SCHOOL.</p>
                 <br />
-                <p style={{ animationDelay: '4800ms', animationDuration: '2500ms', width: '70ch', animationTimingFunction: 'steps(70)' }}>Je suis à la recherche d'un stage en développement pour juin 2024.</p>
+                <p style={{ animationDelay: '4800ms', animationDuration: '2500ms', width: '71ch', animationTimingFunction: 'steps(71)' }}>Je suis à la recherche d'un stage en développement pour juin 2024.</p>
             </>
         ),
         qualites: (
             <>
-                <p style={{ animationDelay: '0ms', animationDuration: '2200ms', width: '53ch', animationTimingFunction: 'steps(53)' }}>Je suis quelqu'un de motivé, passionné et curieux.</p>
+                <p style={{ animationDelay: '0ms', animationDuration: '2200ms', width: '54ch', animationTimingFunction: 'steps(54)' }}>Je suis quelqu'un de motivé, passionné et curieux.</p>
                 <br />
-                <p style={{ animationDelay: '2200ms', animationDuration: '2800ms', width: '62ch', animationTimingFunction: 'steps(62)' }}>Je suis toujours organisé et rigoureux dans ce que je fais.</p>
+                <p style={{ animationDelay: '2200ms', animationDuration: '2800ms', width: '63ch', animationTimingFunction: 'steps(63)' }}>Je suis toujours organisé et rigoureux dans ce que je fais.</p>
             </>
         ),
         hobbies: (
             <>
-                <p style={{ animationDelay: '0ms', animationDuration: '1900ms', width: '61ch', animationTimingFunction: 'steps(61)' }}>Je suis un grand fan de jeux vidéos et j'adore la musique.</p>
+                <p style={{ animationDelay: '0ms', animationDuration: '1900ms', width: '62ch', animationTimingFunction: 'steps(62)' }}>Je suis un grand fan de jeux vidéos et j'adore la musique.</p>
                 <br />
-                <p style={{ animationDelay: '1900ms', animationDuration: '1400ms', width: '48ch', animationTimingFunction: 'steps(48)' }}>J'aime également la formule 1 et le football.</p>
+                <p style={{ animationDelay: '1900ms', animationDuration: '1400ms', width: '49ch', animationTimingFunction: 'steps(49)' }}>J'aime également la formule 1 et le football.</p>
                 <br />
-                <p style={{ animationDelay: '3300ms', animationDuration: '1700ms', width: '53ch', animationTimingFunction: 'steps(53)' }}>Mais je suis surtout passionné par l'informatique.</p>
+                <p style={{ animationDelay: '3300ms', animationDuration: '1700ms', width: '54ch', animationTimingFunction: 'steps(54)' }}>Mais je suis surtout passionné par l'informatique.</p>
             </>
         ),
         notFound: (
@@ -63,6 +63,9 @@ export default function AboutMe() {
             </>
         )
     };
+
+    const history: string[] = [];
+    let indexInHistory: number = 0;
 
     useEffect(() => {
         setTimeout(() => {
@@ -121,6 +124,8 @@ export default function AboutMe() {
             let delay = 1;
             let newParagraph;
             const command = textarea.value.split('>')[1].trim();
+            history.push(command);
+            indexInHistory = history.length - 1;
             if (Object.keys(textToShow).includes(command)) {
                 newParagraph = createParagraph(paragraphs.length, textToShow[command]);
 
@@ -134,13 +139,37 @@ export default function AboutMe() {
                 setTextareas(prevTextareas => [...prevTextareas, createTextarea(prevTextareas.length)]);
             }, delay);
         }
+        if (e.key === 'Tab') {
+            e.preventDefault();
+            const wordTab = Object.keys(textToShow).map((key) => {
+                if (key.startsWith(textarea.value.split('>')[1].trim())) {
+                    textarea.value = 'C:\\Users\\Maxime>' + key;
+                };
+            });
+        };
+        if (e.key === 'ArrowUp') {
+            if (indexInHistory > 0) {
+                textarea.value = 'C:\\Users\\Maxime>' + history[indexInHistory];
+                indexInHistory--;
+            } else {
+                textarea.value = 'C:\\Users\\Maxime>' + history[0];
+            }
+        };
+        if (e.key === 'ArrowDown') {
+            if (indexInHistory < history.length - 1) {
+                indexInHistory++;
+                textarea.value = 'C:\\Users\\Maxime>' + history[indexInHistory];
+            } else {
+                textarea.value = 'C:\\Users\\Maxime>';
+            }
+        }
     };
 
     return (
         <main>
             <div className={`bg-black w-2/3 h-[600px] mx-auto mt-16 rounded-xl ${cascadiaMono.className} overflow-auto`}>
                 <div className='text-center'>
-                    <h3 className='inline-block typing-effect ml-auto mt-4 text-xl' style={{ animationDelay: '0s', animationDuration: '1s', width: '14ch', animationTimingFunction: 'steps(13)' }}>QUI SUIS-JE ?</h3>
+                    <h2 className='inline-block typing-effect ml-auto mt-4 text-xl' style={{ animationDelay: '0s', animationDuration: '1s', width: '14ch', animationTimingFunction: 'steps(13)' }}>QUI SUIS-JE ?</h2>
                 </div>
                 <div className='text-sm cmd leading-6'>
                     {paragraphs.map((paragraph, index) => (
@@ -165,7 +194,7 @@ export default function AboutMe() {
                 <h3 className='text-center mt-12 text-3xl font-medium underline underline-offset-8 decoration-2 decoration-[#F9F871]'>Mes expériences :</h3>
                 <div className='flex flex-row flex-wrap justify-around'>
                     <Card title="Les restos du cœur" description="J'ai eu l'occasion de faire un stage de 2 mois dans le but de développer un site en interne." />
-                    <Card title="Mes projets" description="J'ai fait beaucoup de projets par moi-même dans différents langages comme HTML/JS/CSS, NextJS, C or Java. Ils sont disponibles sur mon Github." />
+                    <Card title="Mes projets" description="J'ai fait beaucoup de projets par moi-même dans différents langages comme HTML/JS/CSS, NextJS, C ou Java. Ils sont disponibles sur mon Github." />
                 </div>
             </div>
         </main>

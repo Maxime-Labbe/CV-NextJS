@@ -80,14 +80,6 @@ body {
   opacity: 0;
 }
 
-.cmd div p:nth-child(1) {
-  padding-left: 22px;
-}
-
-.cmd div br+p {
-  padding-left: 22px;
-}
-
 .cmd div p:nth-child(n+2) {
   margin-top: -10px;
 }
@@ -113,10 +105,12 @@ body {
   outline: none;
 }
 
-.cmd div::before {
+.cmd p:nth-child(1)::before {
   content: "> ";
-  position: absolute;
-  left: calc(17% + 2px);
+}
+
+.cmd br+p::before {
+  content: "> ";
 }
 
 @media (min-width: 640px) {
