@@ -180,6 +180,12 @@ export default function AboutMe() {
                     ))}
                 </div>
             </div>
+            <div className='sm:block hidden bg-white mx-auto mt-4 xl:w-28 w-24 h-10 rounded-full lg:absolute xl:right-16 lg:right-0 lg:bottom-12 cursor-pointer' onClick={() => window.scrollTo(0, window.innerHeight - 50)}>
+                <svg className='relative left-2 xl:top-2.5 top-3 rotate-180 xl:h-5 h-4' viewBox="0 0 512 512">
+                    <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path>
+                </svg>
+                <p className='relative xl:left-8 left-7 xl:top-[-10px] top-[-4px] text-black xl:text-sm text-xs font-bold'>Plus d'infos</p>
+            </div>
             <div className='test'>
                 <h3 className='text-center mt-12 text-3xl font-medium underline underline-offset-8 decoration-2 decoration-[#F9F871]'>Mes compétences techniques :</h3>
                 <div className='flex flex-row flex-wrap justify-around wrap'>
