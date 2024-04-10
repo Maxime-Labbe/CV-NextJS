@@ -14,6 +14,15 @@ body {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--text-color);
+  border-radius: 10px;
+}
+
 .menu li {
   width: fit-content;
   margin-left: auto;
@@ -86,7 +95,6 @@ body {
   height: 24px;
   margin-left: -5px;
   caret-color: white;
-  color: white;
   background-color: black;
   resize: none;
   margin-bottom: -4px;
@@ -94,7 +102,7 @@ body {
 }
 
 .cmd textarea::placeholder {
-  color: white;
+  color: var(--text-color);
   opacity: 1;
 }
 
