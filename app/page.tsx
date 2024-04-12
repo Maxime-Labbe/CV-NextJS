@@ -9,21 +9,21 @@ export default function Home() {
       </div>
       <div className="sm:w-2/5 w-full flex justify-center items-end content-end h-72 lg:mb-[-300px] sm:mb-[-200px]">
         <Image
-          src="/testimage.jpg"
+          src="/facePicture.jpg"
           alt="Photo de Maxime LABBE"
           width={350}
           height={350}
           className="rounded-full lg:block hidden"
         />
         <Image
-          src="/testimage.jpg"
+          src="/facePicture.jpg"
           alt="Photo de Maxime LABBE"
           width={250}
           height={250}
           className="rounded-full lg:hidden sm:block hidden"
         />
         <Image
-          src="/testimage.jpg"
+          src="/facePicture.jpg"
           alt="Photo de Maxime LABBE"
           width={250}
           height={250}
