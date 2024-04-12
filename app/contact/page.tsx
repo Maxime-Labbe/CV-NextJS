@@ -8,7 +8,7 @@ export default function Contact() {
                 <Card title="GitHub" description="My GitHub : " link='https://github.com/Maxime-Labbe' image='/github.svg' />
                 <Card title="LinkedIn" description="My LinkedIn : " link='https://www.linkedin.com/in/maxime-labbe-626012293/' image='/linkedin.svg' />
                 <Card title="Mail" description="My Mail : " link='mailto:maxime30labbe@gmail.com' image='/mail.svg' />
-                <Card title="Phone" description="My Number : " link='phoneto:+33770107148' image='/phone.svg' />
+                <Card title="Phone" description="My Number : " link='tel:+33770107148' image='/phone.svg' />
             </div>
         </main>
     )

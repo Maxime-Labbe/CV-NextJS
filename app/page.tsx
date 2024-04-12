@@ -7,7 +7,7 @@ export default function Home() {
         <h1 className="text-3xl font-medium mb-2 sm:text-end sm:mb-0">Hey, je suis <span className="text-[#F9F871] font-semibold text-4xl">Maxime LABBE.</span></h1>
         <h2 className="text-2xl font-medium sm:text-end">Étudiant en informatique à <br />ENIGMA-SCHOOL à Lille.</h2>
       </div>
-      <div className="sm:w-2/5 w-fukk flex justify-center items-end content-end h-72 lg:mb-[-300px] sm:mb-[-200px]">
+      <div className="sm:w-2/5 w-full flex justify-center items-end content-end h-72 lg:mb-[-300px] sm:mb-[-200px]">
         <Image
           src="/testimage.jpg"
           alt="Photo de Maxime LABBE"

@@ -1,14 +1,11 @@
 'use client';
 
-import { useEffect, useState, useRef, useLayoutEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Card from '../card';
 import localFont from "next/font/local";
-import { notFound } from 'next/navigation';
-import { text } from 'stream/consumers';
 import React from 'react';
 
 const cascadiaMono = localFont({ src: '../../fonts/CascadiaMono.ttf' });
-const cascadiaMonoBold = localFont({ src: '../../fonts/CascadiaMono-Bold.ttf' });
 
 export default function AboutMe() {
 
@@ -190,16 +187,16 @@ export default function AboutMe() {
                 <h3 className='text-center mt-12 text-3xl font-medium underline underline-offset-8 decoration-2 decoration-[#F9F871]'>Mes compétences techniques :</h3>
                 <div className='flex flex-row flex-wrap justify-around wrap'>
                     <Card title="HTML/CSS/JS" description="Je suis bon au développement web avec HTML/CSS/JS. J'ai déjà eu l'occasion de faire quelques sites pour des projets personnels." />
+                    <Card title="Python" description="J'ai une connaissance avancée de python. J'ai également déjà utilisé quelques libraires comme Flask," />
                     <Card title="NextJS" description="Je suis toujours en train d'apprendre NextJS." />
                     <Card title="C" description="J'ai déjà fait du développement en C. Je connais les bases du langage et j'ai également quelques connaissances plus avancées. J'ai déjà également utilisé SDL2." />
                     <Card title="Java" description="J'ai pu faire quelques programmes en java, je connais les bases du langage." />
-                    <Card title="Python" description="J'ai une connaissance avancée de python. J'ai également déjà utilisé quelques libraires comme Flask," />
                 </div>
             </div>
             <div className='test mb-12'>
                 <h3 className='text-center mt-12 text-3xl font-medium underline underline-offset-8 decoration-2 decoration-[#F9F871]'>Mes expériences :</h3>
                 <div className='flex flex-row flex-wrap justify-around'>
-                    <Card title="Les restos du cœur" description="J'ai eu l'occasion de faire un stage de 2 mois dans le but de développer un site en interne." />
+                    <Card title="Les restos du cœur" description="Stage de 2 mois prévu pour les mois de juin-juillet 2024." />
                     <Card title="Mes projets" description="J'ai fait beaucoup de projets par moi-même dans différents langages comme HTML/JS/CSS, NextJS, C ou Java. Ils sont disponibles sur mon Github." />
                 </div>
             </div>
