@@ -183,7 +183,7 @@ export default function AboutMe() {
                 </svg>
                 <p className='relative xl:left-8 left-7 xl:top-[-10px] top-[-4px] text-black xl:text-sm text-xs font-bold'>Plus d'infos</p>
             </div>
-            <div className='test'>
+            <div className='cardsdiv'>
                 <h3 className='text-center mt-12 text-3xl font-medium underline underline-offset-8 decoration-2 decoration-[#F9F871]'>Mes compétences techniques :</h3>
                 <div className='flex flex-row flex-wrap justify-around wrap'>
                     <Card title="HTML/CSS/JS" description="Je suis bon au développement web avec HTML/CSS/JS. J'ai déjà eu l'occasion de faire quelques sites pour des projets personnels." />
@@ -193,11 +193,18 @@ export default function AboutMe() {
                     <Card title="Java" description="J'ai pu faire quelques programmes en java, je connais les bases du langage." />
                 </div>
             </div>
-            <div className='test mb-12'>
+            <div className='cardsdiv'>
                 <h3 className='text-center mt-12 text-3xl font-medium underline underline-offset-8 decoration-2 decoration-[#F9F871]'>Mes expériences :</h3>
                 <div className='flex flex-row flex-wrap justify-around'>
                     <Card title="Les restos du cœur" description="Stage de 2 mois prévu pour les mois de juin-juillet 2024." />
                     <Card title="Mes projets" description="J'ai fait beaucoup de projets par moi-même dans différents langages comme HTML/JS/CSS, NextJS, C ou Java. Ils sont disponibles sur mon Github." />
+                </div>
+            </div>
+            <div className='cardsdiv mb-12'>
+                <h3 className='text-center mt-12 text-3xl font-medium underline underline-offset-8 decoration-2 decoration-[#F9F871]'>Mes formations :</h3>
+                <div className='flex flex-row flex-wrap justify-around'>
+                    <Card title="Lycée Sacré-Coeur" description="J'ai obtenu mon bac mention très bien avec les spécialités Mathématiques et NSI et option Maths expertes au lycée Sacré-Coeur de Tourcoing durant l'année 22/23." />
+                    <Card title="Enigma-School" description="Actuellement en apprentissage pour obtenic un Bac+3 : Administrateur des systèmes d'informations." />
                 </div>
             </div>
         </main>

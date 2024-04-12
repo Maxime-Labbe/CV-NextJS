@@ -184,7 +184,7 @@ body {
     }
   }
 
-  .test {
+  .cardsdiv {
     margin-bottom: 100px;
     animation: linear slide-from-left both;
     animation-timeline: view();
@@ -193,7 +193,7 @@ body {
 }
 
 @media (min-width: 900px) {
-  .test {
+  .cardsdiv {
     animation-range: entry 25% cover 45%;
   }
 }
