@@ -9,8 +9,8 @@ const garamond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Labbe Maxime - CV",
-  description: "My website CV",
+  title: "Labbe Maxime - Portfolio",
+  description: "My portfolio",
 };
 
 export default function RootLayout({

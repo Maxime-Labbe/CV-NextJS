@@ -3,7 +3,16 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex flex-col items-center sm:flex-row content-around w-full">
-      <div className="mt-16 w-4/5 sm:w-3/5 flex flex-col sm:justify-end h-auto sm:h-72 gap-0 text-center">
+      <div className="relative top-32 left-10 w-2/6 text-center text-2xl">
+        <h2 className="mb-10 text-[#F9F871] font-bold text-5xl">Me contacter</h2>
+        <ul>
+          <a href="https://www.linkedin.com/in/maxime-labbe-626012293/"><li className="pb-4 contact" data-content="Linkedin"><Image src="linkedin.svg" alt="" width={50} height={50} key="linkedin.svg" /></li></a>
+          <a href="mailto:maxime30labbe@gmail.com"><li className="pb-4 contact" data-content="Email"><Image src="mail.svg" alt="" width={50} height={50} key="mail.svg" /></li></a>
+          <a href="tel:+33770107148"><li className="pb-4 contact" data-content="Téléphone"><Image src="phone.svg" alt="" width={50} height={50} key="phone.svg" /></li></a>
+          <a href="https://github.com/Maxime-Labbe"><li className="pb-4 contact" data-content="GitHub"><Image src="github.svg" alt="" width={50} height={50} key="github.svg" /></li></a>
+        </ul>
+      </div>
+      <div className="mt-16 w-2/6 sm:w-3/5 flex flex-col sm:justify-end h-auto sm:h-72 gap-0 text-center">
         <h1 className="text-3xl font-medium mb-2 sm:text-end sm:mb-0">Hey, je suis <span className="text-[#F9F871] font-semibold text-4xl">Maxime LABBE.</span></h1>
         <h2 className="text-2xl font-medium sm:text-end">Étudiant en informatique à <br />ENIGMA-SCHOOL à Lille.</h2>
       </div>

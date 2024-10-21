@@ -1,27 +1,42 @@
+import { desc } from "framer-motion/client"
 import Image from "next/image"
 
 export default function Card({
     title,
     description,
     link,
-    image
+    place
 }: {
     title: string,
     description: string,
+    place: string,
     link?: string,
-    image?: string
 }) {
-    const titleHTML = []
-    if (image) {
-        titleHTML.push(<a href={link} aria-label={title} target="_blank" className="mx-auto mt-6"><Image className="hidden sm:block absolute top-32 left-24" src={image} alt="" width={100} height={100} key={image} /><Image className="sm:hidden block absolute top-28 left-11" src={image} alt="" width={80} height={80} key={image} /></a>)
-    } else {
-        titleHTML.push(<h2 className="hidden sm:block text-center mx-auto mt-[115px] text-4xl font-bold text-[#EEEDFF] group-hover:text-transparent" key={title}>{title}</h2>)
-    }
     return (
-        <div className="card group">
-            <h2 className="text-center mx-auto mt-[10px] text-[25px] sm:text-4xl font-bold sm:text-transparent sm:group-hover:text-[#EEEDFF]">{title}</h2>
-            <p className="w-11/12 text-center ml-2 absolute mt-4 sm:mt-2 text-base sm:text-xl font-normal sm:text-transparent sm:group-hover:text-[#EEEDFF]">{description}</p>
-            {titleHTML}
-        </div>
+        <>
+            {place === "right" ? (
+                <div className="card group right">
+                    <h2 className="text-center mx-auto text-[25px] sm:text-4xl font-bold text-[#F9F871]">{title}</h2>
+                    <div className="cardText w-3/5 bg-[#DCDCDC] rounded-l-2xl flex-col justify-center flex">
+                        <p className="w-11/12 text-center mt-4 sm:mt-2 text-base sm:text-2xl font-normal text-[#191923] mx-auto">
+                        {description.split('\n').map((line, i) => (
+                            <span key={i}>{line}<br /></span>
+                        ))}
+                        </p>
+                    </div>
+                </div>
+            ) : (
+            <div className="card group left">
+                <div className="cardText w-3/5 bg-[#DCDCDC] rounded-r-2xl h-32 flex-col justify-center flex">
+                    <p className="w-11/12 text-center mt-4 sm:mt-2 text-base sm:text-2xl font-normal text-[#191923] mx-auto">
+                    {description.split('\n').map((line, i) => (
+                            <span key={i}>{line}<br /></span>
+                        ))}
+                    </p>
+                </div>
+                <h2 className="text-center mx-auto text-[25px] sm:text-4xl font-bold text-[#F9F871]">{title}</h2>
+            </div>
+            )}
+        </>
     )
 };
