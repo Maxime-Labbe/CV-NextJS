@@ -32,7 +32,7 @@ body {
 }
 
 .menu li a {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   text-decoration: none;
   font-weight: 500;
 }
@@ -43,34 +43,37 @@ body {
 }
 
 .contact {
-  width:50px;
+  width:100px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  left: -10px;
   transition: all 0.5s ease-in-out;
 }
 
 .contact::after {
-  content: "";
+  content: attr(data-content);
   position: absolute;
-  left: 60px;
-  top: 3px;
+  left: 50px;
+  top: -6px;
   white-space: nowrap;
-  font-size: 1.6rem;
-  font-weight: bolder;
+  font-size: 1.2rem;
+  font-weight: 500;
   padding: 5px;
-  display: none;
   transition: all 0.5s ease-in-out;
 }
 
-.contact:hover {
-  width:120px;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
 }
 
-.contact:hover::after {
-  content: attr(data-content);
-  display: block;
-}
 
 .oldcard {
   position: relative;
@@ -86,18 +89,6 @@ body {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   transition: all 0.5s ease-in-out;
-}
-
-.card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 120px;
-  visibility: hidden;
 }
 
 .card div {
@@ -197,6 +188,40 @@ body {
     background-position: 100% 100%, 0 100%;
     background-repeat: no-repeat;
     transition: background-size 350ms linear;
+  }
+
+  .contact::after {
+    content: "";
+    position: absolute;
+    left: 60px;
+    top: 3px;
+    white-space: nowrap;
+    font-size: 1.6rem;
+    font-weight: bolder;
+    padding: 5px;
+    display: none;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .contact:hover {
+    width:120px;
+  }
+  
+  .contact:hover::after {
+    content: attr(data-content);
+    display: block;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+    visibility: hidden;
   }
 
   .oldcard:hover {
@@ -306,6 +331,12 @@ body {
 @media (min-width: 900px) {
   .cardsdiv {
     animation-range: entry 25% cover 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu li a {
+    font-size: 1.6rem;
   }
 }
 

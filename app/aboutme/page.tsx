@@ -8,6 +8,7 @@ import React from 'react';
 export default function AboutMe() {
 
     useEffect(() => {
+      if (window.innerWidth >= 640) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting && entry.intersectionRatio === 1) {
@@ -33,7 +34,8 @@ export default function AboutMe() {
             observer.unobserve(card);
           });
         };
-      }, []);
+      }
+    }, []);
 
     return (
         <div className='mt-24 mb-32'>
