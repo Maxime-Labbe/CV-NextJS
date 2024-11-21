@@ -190,6 +190,10 @@ body {
     transition: background-size 350ms linear;
   }
 
+  .contact {
+    left: 15px;
+  }
+
   .contact::after {
     content: "";
     position: absolute;
