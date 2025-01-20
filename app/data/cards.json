@@ -1,0 +1,22 @@
+[
+    {
+      "title": "Compétences",
+      "place": "right",
+      "description": "Je possède de nombreuses connaissances techniques :\nScript : Python, C\nFront-end : HTML, CSS, JS, React, Next-JS, PHP\nBack-end : Node-JS, PHP\nDivers : SQL / MySQL, Git, GitHhub, CCNA 1"
+    },
+    {
+      "title": "Expériences",
+      "place": "left",
+      "description": "Les restos du coeur : Création d'une application, type CRM, pour gérer la prospection des dons dans l'antenne départementale du nord. Utilisation du framework NextJS en liaison avec une base de données MySQL.\nMes projets : J'ai pu apprendre de nombreux choses en faisant de nombreux projets qui sont disponibles sur mon GitHub."
+    },
+    {
+      "title": "Qualités",
+      "place": "right",
+      "description": "Étant très curieux, je suis toujours motivé pour apprendre de nouveaux langages et de me lancer dans des projets, poussé également par ma passion. Ma rigueur me pousse à m'appliquer dans toutes les tâches que j'entreprends et à également m'organiser."
+    },
+    {
+      "title": "Hobbies",
+      "place": "left",
+      "description": "Je suis un passionné de jeux vidéo et de cinéma, qui me permettent de vivre des expériences captivantes. J'apprécie aussi des sports comme la Formule 1 et le football, pour leur dynamisme et leur intensité. Cependant, ma passion principale reste l'informatique, un domaine où j'aime relever des défis et découvrir sans cesse de nouvelles technologies."
+    }
+  ]

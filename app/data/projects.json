@@ -1,0 +1,37 @@
+[
+    {
+        "text_color": "black",
+        "title": "Portfolio",
+        "description": "Ce portfolio est un projet personnel que j'ai réalisé pour un ami à moi.\nCelui-ci fit office de vitrines pour un projet personnel à lui.\nIl m'a permis de mesurer mes capacités à réaliser un site web en moins d'une journée (environ 8h de travail).\nIl est réalisé en React et NextJS et est hébergé sur Vercel.",
+        "siteLink": "https://portfolio-simon-berchtold.vercel.app/",
+        "gitLink": "https://github.com/Maxime-Labbe/NextJS-Portfolio-Simon",
+        "imageSrc": "portfolio/home.png",
+        "pictures": [
+            "portfolio/detailed_home.png",
+            "portfolio/serie_page.png"
+        ]
+    },
+    {
+        "text_color": "white",
+        "title": "Wordle",
+        "description": "Wordle est un jeu de mots où le but est de trouver un mot en 6 essais.\nIl est possible de jouer tout seul ou contre un robot (que j'ai codé personnellement).\nLe jeu est réalisé en Django",
+        "gitLink": "https://github.com/Maxime-Labbe/Django-Wordle",
+        "imageSrc": "wordle/home.png",
+        "pictures": [
+            "wordle/empty.png",
+            "wordle/one_word.png",
+            "wordle/final.png"
+        ]
+    },
+    {
+        "text_color": "white",
+        "title": "Casse-briques",
+        "description": "Casse-briques est un jeu où le but est de casser toutes les briques avec une balle.\nLe jeu possède plusieurs difficultés ce qui change notamment la vitesse de la balle et le nombre de vies du joueurs.\nLe jeu est réalisé en C",
+        "gitLink": "https://github.com/Maxime-Labbe/C-Brick_Breaker",
+        "imageSrc": "brick-breaker/home.png",
+        "pictures": [
+            "brick-breaker/game.png",
+            "brick-breaker/settings.png"
+        ]
+    }
+]
