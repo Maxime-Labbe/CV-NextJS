@@ -9,27 +9,27 @@ export default function Home() {
         <ul className="contact-list">
           <a href="https://www.linkedin.com/in/maxime-labbe-626012293/">
             <li className="contact-item" data-content="Linkedin">
-              <Image src="linkedin.svg" alt="" width={30} height={30} className="contact-icon" />
+              <Image src="logo/linkedin.svg" alt="" width={30} height={30} className="contact-icon" />
             </li>
           </a>
           <a href="mailto:maxime30labbe@gmail.com">
             <li className="contact-item" data-content="Email">
-              <Image src="mail.svg" alt="" width={30} height={30} className="contact-icon" />
+              <Image src="logo/mail.svg" alt="" width={30} height={30} className="contact-icon" />
             </li>
           </a>
           <a href="tel:+33770107148">
             <li className="contact-item" data-content="Téléphone">
-              <Image src="phone.svg" alt="" width={30} height={30} className="contact-icon" />
+              <Image src="logo/phone.svg" alt="" width={30} height={30} className="contact-icon" />
             </li>
           </a>
           <a href="https://github.com/Maxime-Labbe">
             <li className="contact-item" data-content="GitHub">
-              <Image src="github.svg" alt="" width={30} height={30} className="contact-icon" />
+              <Image src="logo/github.svg" alt="" width={30} height={30} className="contact-icon" />
             </li>
           </a>
           <a href="https://www.root-me.org/SuperP">
             <li className="contact-item" data-content="Root-me">
-              <Image src="rootme.svg" alt="" width={30} height={30} className="contact-icon" />
+              <Image src="logo/rootme.svg" alt="" width={30} height={30} className="contact-icon" />
             </li>
           </a>
         </ul>
