@@ -3,10 +3,9 @@ import path from 'path';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
-  console.log('API route called');
   const scriptPath = path.join(process.cwd(), 'scripts', 'codingameApi.py');
   return new Promise((resolve) => {
-    exec(`python "${scriptPath}"`, (error, stdout, stderr) => {
+    exec(`python3 "${scriptPath}"`, (error, stdout, stderr) => {
       if (error) {
         console.error(`exec error: ${error}`);
         resolve(NextResponse.json({ error: 'Failed to execute Python script', status: 500 }));
