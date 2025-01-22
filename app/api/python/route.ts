@@ -16,7 +16,7 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
         resolve(NextResponse.json({ error: 'Python script error', details: stderr, status: 500 }));
         return;
       }
-      const resp = stdout.trim().split('\r\n');
+      const resp = stdout.trim().replaceAll('\r','').split('\n');
       resolve(NextResponse.json({ rank: resp[0], totalPlayers: resp[1] }));
     });
   });
