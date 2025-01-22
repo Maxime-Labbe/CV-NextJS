@@ -1,0 +1,17 @@
+{
+    "builds": [
+      {
+        "src": "app/api/python/route.ts",
+        "use": "@vercel/node",
+        "config": {
+          "includeFiles": ["scripts/**"]
+        }
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/app/api/$1"
+      }
+    ]
+  }

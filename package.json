@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run install-python && next build",
+    "install-python": "curl -sSL https://install.python-poetry.org | python3 - && poetry install",
     "start": "next start",
     "lint": "next lint"
   },
