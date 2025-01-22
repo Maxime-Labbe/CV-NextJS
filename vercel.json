@@ -1,17 +1,4 @@
 {
-    "builds": [
-      {
-        "src": "app/api/python/route.ts",
-        "use": "@vercel/node",
-        "config": {
-          "includeFiles": ["scripts/**"]
-        }
-      },
-      {
-        "src": "next.config.js",
-        "use": "@vercel/next"
-      }
-    ],
     "routes": [
       {
         "src": "/api/(.*)",
