@@ -1,12 +1,16 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 import Image from "next/image";
+import { 
+  RANK_FETCH_INIT,
+  RANK_FETCH_SUCCESS,
+  RANK_FETCH_FAILURE,
+  rankReducer,
+  initialState } from "./rankReducer";
 import "./home.css";
-import { transferableAbortSignal } from "util";
 
 export default function Home() {
-  const [rank, setRank] = useState(null);
-  const [totalPlayers, setTotalPlayers] = useState(null);
+  const [rank, dispatch] = useReducer(rankReducer, initialState);
   const fetchPython = async () => {
     try {
       const response = await fetch('/api/python');
@@ -14,14 +18,15 @@ export default function Home() {
         throw new Error('Failed to fetch Python script output');
       }
       const data = await response.json();
-      setRank(data.rank);
-      setTotalPlayers(data.totalPlayers);
+      dispatch({ type: RANK_FETCH_SUCCESS, payload: data });
     } catch (error) {
+      dispatch({ type: RANK_FETCH_FAILURE });
       console.error('Error fetching Python script output:', error);
     }
   };
 
   useEffect(() => {
+    dispatch({ type: RANK_FETCH_INIT });
     fetchPython();
   }, []);
 
@@ -66,7 +71,18 @@ export default function Home() {
                 <Image src="logo/codingame.svg" alt="" width={30} height={30} className="contact-icon" />
               </li>
             </a>
-            <p className="rank">Mon rang "Clash of Code": <span className="rank">{rank ? rank : '...'}</span> / <span className="total-players">{totalPlayers ? totalPlayers : '...'}</span></p>
+            {
+              rank.isError ? <p className="rank">Erreur lors de la récupération du rang</p> :
+            
+              <p className="rank">Mon rang "Clash of Code":  
+                <span className="rank">
+                  {rank.isLoading ? ' ...' : ' ' + rank.data.rank}
+                </span> / 
+                <span className="total-players">
+                  {rank.isLoading ? ' ...' : ' ' + rank.data.totalPlayers}
+                </span>
+              </p>  
+            }   
           </ul>
         </div>
       </div>
