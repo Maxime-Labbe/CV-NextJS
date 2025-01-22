@@ -6,12 +6,20 @@
         "config": {
           "includeFiles": ["scripts/**"]
         }
+      },
+      {
+        "src": "next.config.js",
+        "use": "@vercel/next"
       }
     ],
     "routes": [
       {
         "src": "/api/(.*)",
         "dest": "/app/api/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/$1"
       }
     ]
   }
