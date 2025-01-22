@@ -114,8 +114,7 @@ body {
   }
 
   .navigation-container {
-    float: none;
-    width: 100%;
+    width: 90%;
   }
 
   .navigation {
@@ -124,5 +123,11 @@ body {
 
   .navbar li a {
     font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .navigation-container {
+    width: 100%;
   }
 }
