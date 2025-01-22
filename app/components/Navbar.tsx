@@ -6,7 +6,7 @@ export default function Navbar() {
             <Link href="/"><h1 className="navbar-title">Maxime Labbe</h1></Link>
             <nav className="navigation-container">
                 <ul className="navigation">
-                    <li><Link href='/'>Acceuil</Link></li>
+                    <li><Link href='/'>Accueil</Link></li>
                     <li><Link href="/aboutme">Qui suis-je ?</Link></li>
                     <li><Link href="/projects">Mes projets</Link></li>
                 </ul>
