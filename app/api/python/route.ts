@@ -2,7 +2,7 @@ import { exec } from 'child_process';
 import path from 'path';
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(req: NextRequest) {
+export async function GET(req: NextRequest): Promise<NextResponse> {
   console.log('API route called');
   const scriptPath = path.join(process.cwd(), 'scripts', 'codingameApi.py');
   return new Promise((resolve) => {
