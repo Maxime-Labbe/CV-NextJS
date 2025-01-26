@@ -13,7 +13,7 @@ export default function Home() {
   const [rank, dispatch] = useReducer(rankReducer, initialState);
   const fetchPython = async () => {
     try {
-      const response = await fetch('/api/python');
+      const response = await fetch('/api/rank');
       if (!response.ok) {
         throw new Error('Failed to fetch Python script output');
       }
