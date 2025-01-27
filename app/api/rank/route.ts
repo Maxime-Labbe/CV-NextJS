@@ -33,14 +33,12 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
       if (error) {
         console.error(`exec error: ${error}`);
         const response = NextResponse.json({ error: 'Failed to execute Python script', status: 500 });
-        response.headers.set('Cache-Control', 'no-store');
         resolve(response);
         return;
       }
       if (stderr) {
         console.error(`stderr: ${stderr}`);
         const response = NextResponse.json({ error: 'Python script error', details: stderr, status: 500 });
-        response.headers.set('Cache-Control', 'no-store');
         resolve(response);
         return;
       }
