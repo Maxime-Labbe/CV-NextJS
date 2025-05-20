@@ -1,12 +1,39 @@
 import type { Metadata } from "next";
-import { EB_Garamond } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
-const garamond = EB_Garamond({
-  subsets: ["latin"],
-  weight: ['400', '500', '600', '700', '800']
-});
+const ahrefs = localFont({
+  src: [
+    {
+      path: "../fonts/ahrefs-light.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/ahrefs-regular.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/ahrefs.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/ahrefs-bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../fonts/ahrefs-special.woff2",
+      weight: "800",
+      style: "normal",
+    }
+  ],
+  variable: "--font-ahrefs",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
   title: "Labbe Maxime - Portfolio",
@@ -20,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={garamond.className}>
+      <body className={ahrefs.className}>
         <Navbar />
         {children}
       </body>

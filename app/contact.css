@@ -1,0 +1,15 @@
+.line {
+    position: absolute;
+    width: 1px;
+    height: 150px;
+    background-color: var(--text-color);
+    bottom: 10px;
+}
+
+.email {
+    transition: all 0.3s ease-in-out;
+}
+
+.email:hover {
+    color: var(--accent-color);
+}

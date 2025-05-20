@@ -3,21 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --title-color: #F9F871;
   --text-color: #EEEDFF;
-  --backgound-color: #191923;
+  --background-color: #18181B;
+  --accent-color: rgb(12 206 107);
 }
 
 body {
-  background-color: rgb(25, 25, 35);
+  background-color: var(--background-color);
+  background-image: url(/noise.png);
+  background-size: 150px 150px;
   color: var(--text-color);
   width: 100%;
+  height: 100vh;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -25,109 +29,7 @@ body {
   border-radius: 10px;
 }
 
-.navbar {
-  width: 100%;
-  height: 56px;
-}
-
-.navbar-title {
-  text-align: center;
-  margin-top: 24px;
-  font-size: 1.875rem;
-  font-weight: 900;
-  color: var(--title-color);
-}
-
-.navigation-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.navigation {
-  width: 100%;
-  height: 56px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-end;
-}
-
-.navbar li {
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.navbar li a {
-  font-size: 1.4rem;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.navbar li:hover {
-  background-size: 0 2px, 100% 2px;
-  cursor: pointer;
-}
-
-@media (min-width: 640px) {
-  .navbar {
-    height: 80px;
-  }
-
-  .navbar-title {
-    position: absolute;
-    top: 10px;
-    left: 32px;
-  }
-
-  .navigation-container {
-    width: 58%;
-    float: inline-end;
-  }
-
-  .navigation {
-    height: 80px;
-  }
-
-  .navbar li {
-    font-size: 1.3rem;
-    background-image: linear-gradient(rgba(239, 233, 231, 0), rgba(239, 233, 231, 0)),
-      linear-gradient(rgba(249, 248, 113, 1), rgba(249, 248, 113, 1));
-    background-size: 100% 2px, 0 2px;
-    background-position: 100% 100%, 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 350ms linear;
-  }
-}
-
-@media (min-width: 768px) {
-  .navigation-container {
-    width: 50%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .navbar-title {
-    font-size: 3rem;
-    top: -2px;
-  }
-
-  .navigation-container {
-    width: 90%;
-  }
-
-  .navigation {
-    width: 50%;
-  }
-
-  .navbar li a {
-    font-size: 1.6rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .navigation-container {
-    width: 100%;
-  }
+::selection {
+  background-color: var(--accent-color);
+  color: var(--background-color);
 }

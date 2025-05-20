@@ -1,268 +1,33 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-}
-
-.informations-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: 50%;
-    order: 2;
-    margin-bottom: 75px;
-}
-
-.contact-container {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.contact-title {
-    margin-bottom: 2rem;
-    color: #F9F871;
-    font-weight: bold;
-    font-size: 1.875rem;
-}
-
-.contact-list {
-    list-style: none;
-    padding: 0;
-}
-
-.contact-item {
-    padding-bottom: 1rem;
-    width: 100px;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+    height: 100vh;
     position: relative;
-    left: -10px;
-    transition: all 0.5s ease-in-out;
+    scroll-behavior: smooth;
 }
 
-.contact-item::after {
-    content: attr(data-content);
-    position: absolute;
-    left: 50px;
-    top: -6px;
-    white-space: nowrap;
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: 5px;
-    transition: all 0.5s ease-in-out;
-}
-
-.contact-icon {
-    width: 30px;
-    height: 30px;
-}
-p.rank {
-    font-size: 1.1rem;
-}
-
-span.rank,
-span.total-players {
-    color: #F9F871;
-    font-weight: bolder;
-    font-size: 1.3rem;
-}
-
-.presentation-container {
+.main > section {
     width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 60px;
+    height: 100vh;
+    scroll-snap-align: start;
 }
 
-.intro-container {
-    width: 66.666667%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    order: 0;
-    height: auto;
-    gap: 0;
-    text-align: center;
+.list-soft-skills > li {
+    font-weight: 700;
+    font-size: 1.25rem;
+    display: inline-block;
 }
 
-.intro-title {
-    font-size: 1.875rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-}
-
-.intro-highlight {
-    color: #F9F871;
-    font-weight: 600;
-    font-size: 2.25rem;
-}
-
-.intro-subtitle {
-    font-size: 1.5rem;
+.list-soft-skills > li > span {
+    font-size: 1.25rem;
     font-weight: 500;
 }
 
-.image-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    order: 1;
-    height: 18rem;
-    margin-bottom: 16px;
+.tech-list > li {
+    font-size: 1.25rem;
 }
 
-.image {
-    border-radius: 0.5rem;
-    border-width: 2px;
-    border-color: white;
-}
-
-@media (min-width: 640px) {
-    .informations-container {
-        margin-top: 50px;
-        flex-direction: row;
-        width: 100%;
-    }
-
-    .contact-container {
-        position: initial;;
-    }
-
-    .contact-title {
-        font-size: 2rem;
-    }
-
-    .contact-item {
-        left: 25px;
-    }
-
-    .contact-item::after {
-        content: "";
-        position: absolute;
-        left: 60px;
-        top: 3px;
-        white-space: nowrap;
-        font-size: 1.6rem;
-        font-weight: bolder;
-        padding: 5px;
-        display: none;
-        transition: all 0.5s ease-in-out;
-    }
-
-    .contact-item:hover {
-        width: 120px;
-    }
-
-    .contact-item:hover::after {
-        content: attr(data-content);
-        display: block;
-    }
-
-    .contact-icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    p.rank {
-        font-size: 1.4rem;
-    }
-
-    .presentation-container {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        margin-top: 0;
-    }
-
-    .intro-container {
-        margin-top: 15px;
-        width: 50%;
-        height: 18rem;
-    }
-
-    .intro-title {
-        text-align: end;
-        margin-bottom: 0;
-    }
-
-    .intro-subtitle {
-        text-align: end;
-    }
-
-    .image-container {
-        width: 50%;
-    }
-
-    .image {
-        border: 0;
-        border-radius: 100%;
-    }
-}
-
-@media (min-width: 1024px) {
-    .main {
-        flex-direction: row;
-    }
-
-    .informations-container {
-        order: 0;
-        flex-direction: column;
-        width: 50%;
-    }
-
-    .contact-title {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
-
-    .contact-icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .presentation-container {
-        flex-direction: column;
-        width: 50%;
-    }
-
-    .intro-container {
-        margin-top: 0;
-        width: 100%;
-        align-items: center;
-    }
-
-    .image-container {
-        margin-bottom: 0;
-        order: 2;
-        width: 100%;
-    }
-
-    .image {
-        width: 350px;
-        height: 350px;
-    }
-}
-
-@media (min-width:1280px) {
-    .informations-container {
-        width: 40%;
-    }
-
-    .presentation-container {
-        flex-direction: row;
-        justify-content: space-between;
-        width: 60%;
-    }
-
-    .intro-container {
-        align-items: flex-end;
-    }
+.tech-list > li::marker {
+    color: var(--accent-color);
 }

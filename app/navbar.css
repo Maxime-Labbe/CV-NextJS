@@ -1,0 +1,15 @@
+.title {
+    color: var(--accent-color);
+}
+
+ul > a {
+    width: 10%;
+}
+
+a > li {
+    border: 1px solid var(--accent-color);
+    width: 0.85rem;
+    height: 0.85rem;
+    background-color: var(--accent-color);
+    rotate: 45deg;
+}
