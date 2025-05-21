@@ -1,3 +1,7 @@
+p > a {
+    color: var(--accent-color);
+}
+
 .main {
     width: 80%;
     margin-left: auto;
@@ -30,4 +34,20 @@
 
 .tech-list > li::marker {
     color: var(--accent-color);
+}
+
+.contact-button {
+    width: auto;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.5);
 }

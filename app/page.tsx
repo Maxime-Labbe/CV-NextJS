@@ -1,10 +1,23 @@
 'use client'
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import "./home.css";
 import Contact from "./components/Contact";
+import Project from "./components/Project";
 
 export default function Home() {
+  const [currentSection,setCurrentSection] = useState(0); 
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const targetSection = document.getElementById(hash.replace('#', ''));
+        if (targetSection) {
+          setCurrentSection(parseInt(hash.replace('#', '')) - 1);
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+  }, [])
 
   useEffect(() => {
     document.querySelectorAll('.main > section').forEach((section, idx, sections) => {
@@ -12,8 +25,10 @@ export default function Home() {
       const event = e as WheelEvent;
       if (event.deltaY > 0 && sections[idx + 1]) {
         sections[idx + 1].scrollIntoView({ behavior: 'smooth' });
+        setCurrentSection(idx + 1);
       } else if (event.deltaY < 0 && sections[idx - 1]) {
         sections[idx - 1].scrollIntoView({ behavior: 'smooth' });
+        setCurrentSection(idx - 1);
       }
     });
   });
@@ -24,6 +39,7 @@ export default function Home() {
       if (targetId) {
         const targetSection = document.getElementById(targetId);
         if (targetSection) {
+          setCurrentSection(parseInt(targetId) - 1);
           e.preventDefault();
           targetSection.scrollIntoView({ behavior: 'smooth' });
         }
@@ -31,6 +47,17 @@ export default function Home() {
     });
   });
   },[]);
+
+  useEffect(() => {
+    const navButtons = document.querySelectorAll('.nav-button');
+    navButtons.forEach((button, index) => {
+      if (index === currentSection) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
+    });
+  },[currentSection])
   
 
   return (
@@ -45,11 +72,15 @@ export default function Home() {
         </div>
       </section>
       <section id="2" className="w-full flex flex-row items-center justify-around">
-        <div className="w-1/3 flex flex-col items-start justify-between">
+        <div className="w-1/3 flex flex-col items-start justify-between mt-[-160px]">
           <h3 className="text-4xl font-bold">Who Am I ?</h3>
           <p className="text-lg mt-4">Hello, my name is Maxime. I am a full stack developer who enjoys building websites and web applications. I enjoy working on both the front end and the back end, creating user-friendly designs. I am mostly working with React, JavaScript, TypeScript and Python.</p>
         </div>
-        <div className="w-1/3 flex flex-col items-center justify-center mt-40">
+        <div className="w-1/3 flex flex-col items-center justify-center mt-[400px]">
+          <h3 className="text-4xl font-bold">What do I like to do ?</h3>
+          <p className="text-lg mt-4">Besides coding, I enjoy watching football especially Lille OSC, I also enjoy playing video games like League of Legends and I love watching <a href="https://letterboxd.com/Maxime_Labbe/">movies.</a></p>
+        </div>
+        <div className="w-1/3 flex flex-col items-center justify-center mt-0">
           <h3 className="text-4xl font-bold">What are my Soft Skills ?</h3>
           <ul className="list-soft-skills inline-block mt-4">
             <li>Curious : <span>I am always searching to learn more and more technologies and tools. </span></li>
@@ -97,7 +128,24 @@ export default function Home() {
             </ul>
           </figure>
         </div>
-        
+      </section>
+      <section id="4" className="flex flex-col flex-wrap items-center justify-center">
+        <h3 className="text-4xl font-bold">My Projects</h3>
+        <div className="flex flex-row items-center justify-around gap-10 mt-10">
+          <Project title="Wordle" description="Wordle is a game where you have to guess a word in less than 6 moves." techs={['Python','Django']} image="/wordle.png" github="https://github.com/Maxime-Labbe/Django-Wordle" />
+          <Project title="Portfolio" description="A portfolio that I've created for a friend, only front-end." techs={['Next.JS']} image="/portfolio.png" site="https://portfolio-simon-berchtold.vercel.app/" github="https://github.com/Maxime-Labbe/NextJS-Portfolio-Simon" />
+          <Project title="CRM" description="A project I have made for an intership, that could be describe as a CRM." techs={['Next.JS','SQL','Linux']} image="/CRM.png" github="https://github.com/Sterbenfr/CRM" />
+          <Project title="Sudoku Solver" description="A personal challenge to solve one of the puzzle I love the most." techs={['Python']} image="/sudokusolver.png" github="https://github.com/Maxime-Labbe/Python-SudokuSolver" />
+        </div>
+        <p className="mt-12 font-semibold text-2xl">More projects on my <a href="https://github.com/Maxime-Labbe">github</a> !</p>
+      </section>
+      <section id="5" className="flex flex-col items-center justify-center">
+        <h3 className="text-5xl font-bold">Get in touch</h3>
+        <div className="w-full flex flexr row items-center justify-center gap-10 mt-10">
+          <a href="mailto:maxime30labbe@gmail.com"><button className="contact-button">Send a mail</button></a>
+          <a href="https://www.linkedin.com/in/maxime-labbe-626012293/" target="_blank"><button className="contact-button">Connect on Linkedin</button></a>
+          <a href="tel:+33770107148"><button className="contact-button">Make a call</button></a>
+        </div>  
       </section>
       <Contact orientation="left" elem={[
         { logo: <Image src="/logo/github.svg" alt="GitHub" width={30} height={30} />, link: "https://github.com/Maxime-Labbe" },

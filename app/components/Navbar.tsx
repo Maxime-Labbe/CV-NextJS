@@ -6,7 +6,7 @@ export default function Navbar() {
             <div className="w-1/5">
                 <a className="title relative left-20 top-10 text-4xl font-extrabold" href="#1"><h1>Labbe Maxime</h1></a>
             </div>
-            <ul className="w-1/12 relative top-10 flex flex-row items-center justify-around list-none">
+            <ul className="w-[200px] relative top-10 flex flex-row items-center justify-center list-none gap-2">
                 <a className="nav-button" href="#1"><li></li></a>
                 <a className="nav-button" href="#2"><li></li></a>
                 <a className="nav-button" href="#3"><li></li></a>

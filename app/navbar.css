@@ -2,14 +2,23 @@
     color: var(--accent-color);
 }
 
-ul > a {
+ul > .nav-button {
     width: 10%;
 }
 
-a > li {
+.nav-button > li {
     border: 1px solid var(--accent-color);
     width: 0.85rem;
     height: 0.85rem;
     background-color: var(--accent-color);
     rotate: 45deg;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-button.active > li {
+    background-color: var(--background-color);
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--accent-color);
+    rotate: 0deg;
 }

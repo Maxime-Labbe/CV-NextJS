@@ -13,3 +13,11 @@
 .email:hover {
     color: var(--accent-color);
 }
+
+.contact-icon {
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-icon {
+    transform: translateY(-0.5rem);
+}

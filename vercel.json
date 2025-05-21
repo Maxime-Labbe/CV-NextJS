@@ -1,7 +1,0 @@
-{
-    "functions": {
-      "api/python-script.py": {
-        "runtime": "python3.13"
-      }
-    }
-  }
