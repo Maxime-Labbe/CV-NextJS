@@ -1,10 +1,22 @@
-.project {
-    /* border: 1px solid rgba(var(--accent-color-rgb), 1); */
+div.project {
     background-color: rgba(var(--background-color-light-rgb), 1);
     box-shadow: 0 4px 24px 0 rgba(0,0,0,0.5);
-    height: 40vh;
+    height: 18vh;
 }
 
 .project-tech {
     color: rgba(var(--text-color-rgb), 0.7);
+}
+
+@media (min-width: 640px) {
+    div.project {
+        width: 45%;
+        height: 25vh;
+    }
+}
+
+@media (min-width: 1280px) {
+    div.project {
+        height: 40vh;
+    }
 }

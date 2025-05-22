@@ -7,10 +7,10 @@ type ContactProps = {
 
 export default function Contact({ orientation, elem }: ContactProps) {
   return (
-    <div className={`fixed ${orientation=="left" ? "left-20 right-auto" : "right-20 left-auto"} bottom-0 w-10 h-72 flex flex-col items-center z-10`}>
+    <div className={`lg:fixed relative ${orientation=="left" ? "xl:left-20 lg:left-6 right-auto" : "xl:right-20 lg:right-6 left-auto"} lg:bottom-0 bottom-20 lg:w-10 w:1/2 lg:h-72 flex flex-col items-center z-10`}>
       {typeof elem === "string" ? 
-      <h4 className="rotate-90 w-auto font-medium"><a className="email w-auto" href={`mailto:${elem}`}>{elem}</a></h4>:
-      <ul className="w-auto flex flex-col items-center list-none gap-4 m-[-55px]">
+      <h4 className="lg:rotate-90 w-auto font-medium xl:m-0 lg:m-[50px] hidden lg:block"><a className="email w-auto" href={`mailto:${elem}`}>{elem}</a></h4>:
+      <ul className="w-auto flex lg:flex-col flex-row items-center list-none gap-4 xl:m-[-55px]">
         {elem.map((item: any, index: number) => (
           <li className="contact-icon" key={index}>
             <a href={item.link} target="_blank">

@@ -20,32 +20,35 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    document.querySelectorAll('.main > section').forEach((section, idx, sections) => {
-    section.addEventListener('wheel', (e) => {
-      const event = e as WheelEvent;
-      if (event.deltaY > 0 && sections[idx + 1]) {
-        sections[idx + 1].scrollIntoView({ behavior: 'smooth' });
-        setCurrentSection(idx + 1);
-      } else if (event.deltaY < 0 && sections[idx - 1]) {
-        sections[idx - 1].scrollIntoView({ behavior: 'smooth' });
-        setCurrentSection(idx - 1);
-      }
-    });
-  });
-  document.querySelectorAll('.nav-button').forEach((button) => {
-    button.addEventListener('click', (e) => {
-      const target = e.currentTarget as HTMLAnchorElement;
-      const targetId = target.getAttribute('href')?.replace('#', '');
-      if (targetId) {
-        const targetSection = document.getElementById(targetId);
-        if (targetSection) {
-          setCurrentSection(parseInt(targetId) - 1);
-          e.preventDefault();
-          targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    });
-  });
+    const width = document.body.clientWidth;
+    if (width >= 1024) {
+      document.querySelectorAll('.main > section').forEach((section, idx, sections) => {
+        section.addEventListener('wheel', (e) => {
+          const event = e as WheelEvent;
+          if (event.deltaY > 0 && sections[idx + 1]) {
+            sections[idx + 1].scrollIntoView({ behavior: 'smooth' });
+            setCurrentSection(idx + 1);
+          } else if (event.deltaY < 0 && sections[idx - 1]) {
+            sections[idx - 1].scrollIntoView({ behavior: 'smooth' });
+            setCurrentSection(idx - 1);
+          }
+        });
+      });
+      document.querySelectorAll('.nav-button').forEach((button) => {
+        button.addEventListener('click', (e) => {
+          const target = e.currentTarget as HTMLAnchorElement;
+          const targetId = target.getAttribute('href')?.replace('#', '');
+          if (targetId) {
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+              setCurrentSection(parseInt(targetId) - 1);
+              e.preventDefault();
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+    }
   },[]);
 
   useEffect(() => {
@@ -62,38 +65,40 @@ export default function Home() {
 
   return (
     <main className="main">
-      <section id="1" className="flex flex-row items-center justify-center">
-        <div className="w-1/2 flex flex-col items-start justify-center">
-          <h2 className="text-5xl font-extrabold mb-8">Full-Stack & Python Developer</h2>
-          <p className="text-lg font-regular">Hi I'm Maxime Labbe, a second year student at ENIGMA-SCHOOL in Lille, France. I am currently looking for an apprenticeship as Full-Stack Developer !</p>
+      <section id="1" className="flex sm:flex-row flex-col items-center justify-center">
+        <div className="w-[90%] flex flex-col items-start justify-center text-center">
+          <h2 className="md:text-5xl text-3xl font-extrabold">Full-Stack & Python Developer</h2>
+          <p className="md:text-lg font-regular md:mt-8 mt-8">Hi I'm Maxime Labbe, a second year student at ENIGMA-SCHOOL in Lille, France. I am currently looking for an apprenticeship as Full-Stack Developer !</p>
         </div>
-        <div className="w-1/3 flex flex-col items-end justify-center">
-          <Image src="/facePicture.jpg" alt="Maxime Labbe" width={350} height={350} className="rounded-full"/>
+        <div className="w-full flex flex-col items-center justify-center mt-8 sm:mt-0">
+          <Image src="/facePicture.jpg" alt="Maxime Labbe" width={350} height={350} className="lg:block hidden rounded-full"/>
+          <Image src="/facePicture.jpg" alt="Maxime Labbe" width={200} height={200} className="sm:block lg:hidden hidden rounded-full"/>
+          <Image src="/facePicture.jpg" alt="Maxime Labbe" width={200} height={200} className="sm:hidden rounded-xl"/>
         </div>
       </section>
-      <section id="2" className="w-full flex flex-row items-center justify-around">
-        <div className="w-1/3 flex flex-col items-start justify-between mt-[-160px]">
-          <h3 className="text-4xl font-bold">Who Am I ?</h3>
-          <p className="text-lg mt-4">Hello, my name is Maxime. I am a full stack developer who enjoys building websites and web applications. I enjoy working on both the front end and the back end, creating user-friendly designs. I am mostly working with React, JavaScript, TypeScript and Python.</p>
+      <section id="2" className="presentation w-full flex flex-col sm:flex-row sm:content-center md:content-normal sm:flex-wrap lg:items-center items-center sm:items-start justify-around md:gap-10 lg:gap-0 lg:mt-auto mt-[-60px]">
+        <div className="lg:mt-[-160px]">
+          <h3>Who Am I ?</h3>
+          <p>Hello, my name is Maxime. I am a full stack developer who enjoys building websites and web applications. I enjoy working on both the front end and the back end, creating user-friendly designs. I am mostly working with React, JavaScript, TypeScript and Python.</p>
         </div>
-        <div className="w-1/3 flex flex-col items-center justify-center mt-[400px]">
-          <h3 className="text-4xl font-bold">What do I like to do ?</h3>
-          <p className="text-lg mt-4">Besides coding, I enjoy watching football especially Lille OSC, I also enjoy playing video games like League of Legends and I love watching <a href="https://letterboxd.com/Maxime_Labbe/">movies.</a></p>
+        <div className="lg:mt-[400px]">
+          <h3>What do I like to do ?</h3>
+          <p>Besides coding, I enjoy watching football especially Lille OSC, I also enjoy playing video games like League of Legends and I love watching <a href="https://letterboxd.com/Maxime_Labbe/">movies.</a></p>
         </div>
-        <div className="w-1/3 flex flex-col items-center justify-center mt-0">
-          <h3 className="text-4xl font-bold">What are my Soft Skills ?</h3>
+        <div className="lg:mt-0">
+          <h3>My Soft Skills :</h3>
           <ul className="list-soft-skills inline-block mt-4">
             <li>Curious : <span>I am always searching to learn more and more technologies and tools. </span></li>
             <li>Conscientious : <span>I always try to pay attention to details and do the best I can.</span></li>
           </ul>
         </div>
       </section>
-      <section id="3" className="flex flex-col items-center justify-center">
-        <h3 className="text-3xl font-bold">Since I started developing, I've learned a lot of technologies and tools :</h3>
-        <div className="flex flex-row items-start justify-between gap-20 mt-10">
+      <section id="3" className="techs flex flex-col items-center justify-center lg:w-full w-[90%] mx-auto lg:mt-auto md:mt-20 mt-40">
+        <h3 className="xl:text-3xl md:text-2xl text-2xl font-bold text-center">Since I started developing, I've learned a lot of technologies and tools :</h3>
+        <div className="flex flex-col sm:flex-row flex-wrap md:flex-nowrap items-start justify-between lg:gap-20 md:gap-10 sm:gap-0 gap-10 mt-10">
           <figure>
-            <figcaption className="font-bold text-2xl underline underline-offset-1">Hard Skills :</figcaption>
-            <ul className="tech-list flex flex-col items-start justify-center gap-2 mt-4 list-disc list-inside">
+            <figcaption>Hard Skills :</figcaption>
+            <ul className="tech-list">
               <li>Database modeling</li>
               <li>Full-Stack</li>
               <li>Algorithm</li>
@@ -102,8 +107,8 @@ export default function Home() {
             </ul>
           </figure>
           <figure>
-            <figcaption className="font-bold text-2xl underline underline-offset-1">Technologies :</figcaption>
-            <ul className="tech-list flex flex-col items-start justify-center gap-2 mt-4 list-disc list-inside">
+            <figcaption>Technologies :</figcaption>
+            <ul className="tech-list">
               <li>HTML</li>
               <li>CSS / Tailwind</li>
               <li>JavaScript / TypeScript</li>
@@ -116,9 +121,9 @@ export default function Home() {
               <li>SQL</li>
             </ul>
           </figure>
-          <figure>
-            <figcaption className="font-bold text-2xl underline underline-offset-1">Tools & OS :</figcaption>
-            <ul className="tech-list flex flex-col items-start justify-center gap-2 mt-4 list-disc list-inside">
+          <figure className="sm:mt-[-140px] md:mt-0">
+            <figcaption>Tools & OS :</figcaption>
+            <ul className="tech-list">
               <li>Visual Studio Code</li>
               <li>Postman</li>
               <li>Git / GitHub</li>
@@ -129,9 +134,9 @@ export default function Home() {
           </figure>
         </div>
       </section>
-      <section id="4" className="flex flex-col flex-wrap items-center justify-center">
+      <section id="4" className="project flex flex-col lg:flex-wrap items-center justify-center xl:mt-0 mt-36">
         <h3 className="text-4xl font-bold">My Projects</h3>
-        <div className="flex flex-row items-center justify-around gap-10 mt-10">
+        <div className="flex flex-col sm:flex-row lg:flex-wrap sm:flex-wrap items-center justify-around xl:gap-10 lg:gap-8 gap-6 xl:mt-10 lg:mt-8 mt-6">
           <Project title="Wordle" description="Wordle is a game where you have to guess a word in less than 6 moves." techs={['Python','Django']} image="/wordle.png" github="https://github.com/Maxime-Labbe/Django-Wordle" />
           <Project title="Portfolio" description="A portfolio that I've created for a friend, only front-end." techs={['Next.JS']} image="/portfolio.png" site="https://portfolio-simon-berchtold.vercel.app/" github="https://github.com/Maxime-Labbe/NextJS-Portfolio-Simon" />
           <Project title="CRM" description="A project I have made for an intership, that could be describe as a CRM." techs={['Next.JS','SQL','Linux']} image="/CRM.png" github="https://github.com/Sterbenfr/CRM" />
@@ -139,9 +144,9 @@ export default function Home() {
         </div>
         <p className="mt-12 font-semibold text-2xl">More projects on my <a href="https://github.com/Maxime-Labbe">github</a> !</p>
       </section>
-      <section id="5" className="flex flex-col items-center justify-center">
-        <h3 className="text-5xl font-bold">Get in touch</h3>
-        <div className="w-full flex flexr row items-center justify-center gap-10 mt-10">
+      <section id="5" className="contact flex flex-col items-center justify-center mt-[-60px]">
+        <h3 className="lg:text-5xl sm:text-3xl text-4xl font-bold">Get in touch</h3>
+        <div className="w-full flex flex-col sm:flex-row items-center justify-center sm:gap-10 gap-6 mt-10">
           <a href="mailto:maxime30labbe@gmail.com"><button className="contact-button">Send a mail</button></a>
           <a href="https://www.linkedin.com/in/maxime-labbe-626012293/" target="_blank"><button className="contact-button">Connect on Linkedin</button></a>
           <a href="tel:+33770107148"><button className="contact-button">Make a call</button></a>

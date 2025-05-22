@@ -13,8 +13,8 @@ type ProjectProps = {
 export default function Project(project: ProjectProps) {
     const { title, description, techs, image, site, github } = project;
   return (
-    <div className="w-1/5 flex flex-col justify-between rounded-xl project p-6">
-        <Image className="w-full h-32" width={200} height={200} src={image} alt={`Image of ${title}`} />
+    <div className="project  xl:w-1/5 lg:w-1/3 flex flex-col justify-between rounded-xl p-4 md:p-6 lg:pt-4 md:pt-2">
+        <Image className="xl:block hidden w-full h-32" width={200} height={200} src={image} alt={`Image of ${title}`} />
         <h4 className="text-2xl font-semibold mt-2">{title}</h4>
         <p className="text-sm font-regular mt-2">{description}</p>
         <div className="flex flex-row items-center justify-between mt-2">
