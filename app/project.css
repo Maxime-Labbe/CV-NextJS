@@ -15,8 +15,15 @@ div.project {
     }
 }
 
+@media (min-width: 1024px) {
+    div.project {
+        width: 33.33%;
+    }
+}
+
 @media (min-width: 1280px) {
     div.project {
+        width: 20%;
         height: 40vh;
     }
 }

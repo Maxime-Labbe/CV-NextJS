@@ -134,9 +134,9 @@ export default function Home() {
           </figure>
         </div>
       </section>
-      <section id="4" className="project flex flex-col lg:flex-wrap items-center justify-center xl:mt-0 mt-36">
+      <section id="4" className="project flex flex-col items-center justify-center xl:mt-0 mt-36">
         <h3 className="text-4xl font-bold">My Projects</h3>
-        <div className="flex flex-col sm:flex-row lg:flex-wrap sm:flex-wrap items-center justify-around xl:gap-10 lg:gap-8 gap-6 xl:mt-10 lg:mt-8 mt-6">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-around xl:gap-10 lg:gap-8 gap-6 xl:mt-10 lg:mt-8 mt-6">
           <Project title="Wordle" description="Wordle is a game where you have to guess a word in less than 6 moves." techs={['Python','Django']} image="/wordle.png" github="https://github.com/Maxime-Labbe/Django-Wordle" />
           <Project title="Portfolio" description="A portfolio that I've created for a friend, only front-end." techs={['Next.JS']} image="/portfolio.png" site="https://portfolio-simon-berchtold.vercel.app/" github="https://github.com/Maxime-Labbe/NextJS-Portfolio-Simon" />
           <Project title="CRM" description="A project I have made for an intership, that could be describe as a CRM." techs={['Next.JS','SQL','Linux']} image="/CRM.png" github="https://github.com/Sterbenfr/CRM" />
