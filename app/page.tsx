@@ -1,12 +1,19 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import "./home.css";
 import Contact from "./components/Contact";
 import Project from "./components/Project";
+import { AppContext, AppContextType } from "./Context";
+import GithubIcon from "../public/logo/github.svg";
+import LinkedinIcon from "../public/logo/linkedin.svg";
+import RootmeIcon from "../public/logo/rootme.svg";
+import CodingameIcon from "../public/logo/codingame.svg";
+
 
 export default function Home() {
-  const [currentSection,setCurrentSection] = useState(0); 
+  const [currentSection,setCurrentSection] = useState(0);
+  const { width } = useContext<AppContextType>(AppContext); 
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -20,7 +27,6 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    const width = document.body.clientWidth;
     if (width >= 1024) {
       document.querySelectorAll('.main > section').forEach((section, idx, sections) => {
         section.addEventListener('wheel', (e) => {
@@ -49,7 +55,7 @@ export default function Home() {
         });
       });
     }
-  },[]);
+  },[width]);
 
   useEffect(() => {
     const navButtons = document.querySelectorAll('.nav-button');
@@ -153,10 +159,10 @@ export default function Home() {
         </div>  
       </section>
       <Contact orientation="left" elem={[
-        { logo: <Image src="/logo/github.svg" alt="GitHub" width={30} height={30} />, link: "https://github.com/Maxime-Labbe" },
-        { logo: <Image src="/logo/linkedin.svg" alt="LinkedIn" width={30} height={30} />, link: "https://www.linkedin.com/in/maxime-labbe-626012293/" },
-        { logo: <Image src="/logo/rootme.svg" alt="RootMe" width={30} height={30} />, link: "https://www.root-me.org/SuperP" },
-        { logo: <Image src="/logo/codingame.svg" alt="CodinGame" width={30} height={30} />, link: "https://www.codingame.com/profile/d4ca9edd312a1c1bd8bbb2e73b5682861549375" },
+        { logo: <GithubIcon className="svg-icon w-8 h-8" alt="GitHub"/>, link: "https://github.com/Maxime-Labbe" },
+        { logo: <LinkedinIcon className="svg-icon w-8 h-8" alt="Linkedin"/>, link: "https://www.linkedin.com/in/maxime-labbe-626012293/" },
+        { logo: <RootmeIcon className="svg-icon w-8 h-8" alt="Root-Me"/>, link: "https://www.root-me.org/SuperP" },
+        { logo: <CodingameIcon className="svg-icon w-8 h-8" alt="Codingame"/>, link: "https://www.codingame.com/profile/d4ca9edd312a1c1bd8bbb2e73b5682861549375" },
         ]}/>
       <Contact orientation="right" elem="maxime30labbe@gmail.com"/>
     </main>

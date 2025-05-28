@@ -14,6 +14,15 @@
     transform: translateY(-0.5rem);
 }
 
+.contact-icon svg {
+    transition: all 0.3s ease-in-out;
+    fill: var(--text-color);
+}
+
+.contact-icon:hover svg {
+    fill: var(--accent-color);
+}
+
 @media (min-width: 1024px) {
     .line {
         position: absolute;
@@ -21,6 +30,27 @@
         height: 100px;
         background-color: var(--text-color);
         bottom: 10px;
+    }
+
+    .copied {
+        position: fixed;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%,100%);
+        width: auto;
+        padding: 0.75rem 1.5rem;
+        border-radius: 100px;
+        color: var(--background-color);
+        background-color: var(--accent-color);
+        font-size: 1.4rem;
+        font-weight: 800;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .copied.active {
+        opacity: 1;
+        transform: translate(-50%,-100%);
     }
 }
 

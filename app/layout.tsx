@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Context from "./Context";
 
 const ahrefs = localFont({
   src: [
@@ -48,8 +49,10 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={ahrefs.className}>
-        <Navbar />
-        {children}
+        <Context>
+          <Navbar />
+          {children}
+        </Context>
       </body>
     </html>
   );
