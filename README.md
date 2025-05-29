@@ -1,6 +1,6 @@
 # Mon CV
 
-Ce projet est un portfolio personnel réalisé avec Next.JS. Il met en avant mes compétences, expériences, qualités et hobbies mais également plusieurs projets présents sur mon github.
+This project is my personal portfolio that you can see [here](https://maximelabbe.vercel.app/)
 
 ## Table of Contents
 
@@ -13,8 +13,8 @@ Ce projet est un portfolio personnel réalisé avec Next.JS. Il met en avant mes
 To get started with this project, clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/your-username/my-cv.git
-cd my-cv
+git clone https://github.com/Maxime-Labbe/CV-NextJS
+cd CV-NextJS
 npm install
 ```
 
@@ -31,36 +31,27 @@ npm run dev
 ```bash
 my-cv/
 ├── app/
-│   ├── about.css
-│   ├── aboutme/
-│   │   └── page.tsx
-│   ├── components/
-│   │   ├── Card.tsx
-│   │   ├── Navbar.tsx
-│   │   └── Project.tsx
-│   ├── data/
-│   │   ├── cards.json
-│   │   └── projects.json
-│   ├── globals.css
-│   ├── home.css
+│   ├── Context.tsx
 │   ├── layout.tsx
-│   ├── page.tsx
-│   ├── project.css
-│   └── projects/
-│       └── page.tsx
-├── public/
-│   ├── brick-breaker/
-│   ├── logo/
-│   ├── portfolio/
-│   └── wordle/
+│   └── page.tsx
+├── components/
+│   ├── Contact.tsx
+│   ├── FadeSection.tsx
+│   ├── Navbar.tsx
+│   └── Project.tsx
 ├── fonts/
-│   ├── CascadiaMono-Bold.ttf
-│   ├── CascadiaMono-BoldItalic.ttf
-│   ├── CascadiaMono-ExtraLight.ttf
-│   ├── CascadiaMono-ExtraLightItalic.ttf
-│   ├── CascadiaMono-Italic.ttf
-│   ├── CascadiaMono-Light.ttf
-│   └── ...
+│   ├── ahrefs-bold.woff2
+│   ├── ahrefs-light.woff2
+│   ├── ahrefs-regular.woff2
+│   ├── ahrefs-special.woff2
+│   └── ahrefs.woff2
+├── hooks/
+│   └── useFadeInOnScroll.tsx
+├── public/
+│   ├── logo/
+│   ├── CRM.png
+│   └── ... .png
+├── styles/
 ├── README.md
 └── package.json
 ```
