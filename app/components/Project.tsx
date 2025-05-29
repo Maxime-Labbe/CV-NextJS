@@ -3,6 +3,7 @@ import Image from "next/image";
 import { AppContext, AppContextType } from "../Context";
 import "../project.css"
 import GithubIcon from "@/public/logo/github.svg";
+import LinkIcon from "@/public/logo/link.svg";
 
 type ProjectProps = {
     title: string;
@@ -49,8 +50,8 @@ export default function Project(project: ProjectProps) {
                 ))}
             </ul>
             <div className="flex flex-row items-center justify-center gap-2">
-                {site ? <a href={site} target="_blank"><Image width={active ? 40 : 20} height={20} src='/logo/link.svg' alt={`Github link to ${title}`}/></a> : ""}
-                <a href={github} target="_blank"><GithubIcon className={`svg-icon ${active ? "w-10 h-10" : "w-5 h-5"}`} alt={`Github link to ${title}`}/></a>
+                {site ? <a href={site} target="_blank"><LinkIcon className={`svg-icon ${active ? "w-10 h-10" : "w-5 h-5"}`}/></a> : ""}
+                <a href={github} target="_blank"><GithubIcon className={`svg-icon ${active ? "w-10 h-10" : "w-5 h-5"}`}/></a>
             </div>
         </div>
     </div>

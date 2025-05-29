@@ -159,10 +159,10 @@ export default function Home() {
         </div>  
       </section>
       <Contact orientation="left" elem={[
-        { logo: <GithubIcon className="svg-icon w-8 h-8" alt="GitHub"/>, link: "https://github.com/Maxime-Labbe" },
-        { logo: <LinkedinIcon className="svg-icon w-8 h-8" alt="Linkedin"/>, link: "https://www.linkedin.com/in/maxime-labbe-626012293/" },
-        { logo: <RootmeIcon className="svg-icon w-8 h-8" alt="Root-Me"/>, link: "https://www.root-me.org/SuperP" },
-        { logo: <CodingameIcon className="svg-icon w-8 h-8" alt="Codingame"/>, link: "https://www.codingame.com/profile/d4ca9edd312a1c1bd8bbb2e73b5682861549375" },
+        { logo: <GithubIcon className="svg-icon w-8 h-8"/>, link: "https://github.com/Maxime-Labbe" },
+        { logo: <LinkedinIcon className="svg-icon w-8 h-8"/>, link: "https://www.linkedin.com/in/maxime-labbe-626012293/" },
+        { logo: <RootmeIcon className="svg-icon w-8 h-8"/>, link: "https://www.root-me.org/SuperP" },
+        { logo: <CodingameIcon className="svg-icon w-8 h-8"/>, link: "https://www.codingame.com/profile/d4ca9edd312a1c1bd8bbb2e73b5682861549375" },
         ]}/>
       <Contact orientation="right" elem="maxime30labbe@gmail.com"/>
     </main>
