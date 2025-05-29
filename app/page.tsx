@@ -4,6 +4,7 @@ import Image from "next/image";
 import "./home.css";
 import Contact from "./components/Contact";
 import Project from "./components/Project";
+import FadeSection from "./components/FadeSection";
 import { AppContext, AppContextType } from "./Context";
 import GithubIcon from "../public/logo/github.svg";
 import LinkedinIcon from "../public/logo/linkedin.svg";
@@ -71,7 +72,7 @@ export default function Home() {
 
   return (
     <main className="main">
-      <section id="1" className="flex sm:flex-row flex-col items-center justify-center">
+      <FadeSection id="1" className="flex sm:flex-row flex-col items-center justify-center">
         <div className="w-[90%] flex flex-col items-start justify-center text-center">
           <h2 className="md:text-5xl text-3xl font-extrabold">Full-Stack & Python Developer</h2>
           <p className="md:text-lg font-regular md:mt-8 mt-8">Hi I'm Maxime Labbe, a second year student at ENIGMA-SCHOOL in Lille, France. I am currently looking for an apprenticeship as Full-Stack Developer !</p>
@@ -81,8 +82,8 @@ export default function Home() {
           <Image src="/facePicture.jpg" alt="Maxime Labbe" width={200} height={200} className="sm:block lg:hidden hidden rounded-full"/>
           <Image src="/facePicture.jpg" alt="Maxime Labbe" width={200} height={200} className="sm:hidden rounded-xl"/>
         </div>
-      </section>
-      <section id="2" className="presentation w-full flex flex-col sm:flex-row sm:content-center md:content-normal sm:flex-wrap lg:items-center items-center sm:items-start justify-around md:gap-10 lg:gap-0 lg:mt-auto mt-[-60px]">
+      </FadeSection>
+      <FadeSection id="2" className="presentation w-full flex flex-col sm:flex-row sm:content-center md:content-normal sm:flex-wrap lg:items-center items-center sm:items-start justify-around md:gap-10 lg:gap-0 lg:mt-auto mt-[-60px]">
         <div className="lg:mt-[-160px]">
           <h3>Who Am I ?</h3>
           <p>Hello, my name is Maxime. I am a full stack developer who enjoys building websites and web applications. I enjoy working on both the front end and the back end, creating user-friendly designs. I am mostly working with React, JavaScript, TypeScript and Python.</p>
@@ -98,8 +99,8 @@ export default function Home() {
             <li>Conscientious : <span>I always try to pay attention to details and do the best I can.</span></li>
           </ul>
         </div>
-      </section>
-      <section id="3" className="techs flex flex-col items-center justify-center lg:w-full w-[90%] mx-auto lg:mt-auto md:mt-20 mt-40">
+      </FadeSection>
+      <FadeSection id="3" className="techs flex flex-col items-center justify-center lg:w-full w-[90%] mx-auto lg:mt-auto md:mt-20 mt-40">
         <h3 className="xl:text-3xl md:text-2xl text-2xl font-bold text-center">Since I started developing, I've learned a lot of technologies and tools :</h3>
         <div className="flex flex-col sm:flex-row flex-wrap md:flex-nowrap items-start justify-between lg:gap-20 md:gap-10 sm:gap-0 gap-10 mt-10">
           <figure>
@@ -139,8 +140,8 @@ export default function Home() {
             </ul>
           </figure>
         </div>
-      </section>
-      <section id="4" className="project flex flex-col items-center justify-center xl:mt-0 mt-36">
+      </FadeSection>
+      <FadeSection id="4" className="project flex flex-col items-center justify-center xl:mt-0 mt-36">
         <h3 className="text-4xl font-bold">My Projects</h3>
         <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-around xl:gap-10 lg:gap-8 gap-6 xl:mt-10 lg:mt-8 mt-6">
           <Project title="Wordle" description="Wordle is a game where you have to guess a word in less than 6 moves." techs={['Python','Django']} image="/wordle.png" github="https://github.com/Maxime-Labbe/Django-Wordle" />
@@ -149,15 +150,15 @@ export default function Home() {
           <Project title="Sudoku Solver" description="A personal challenge to solve one of the puzzle I love the most." techs={['Python']} image="/sudokusolver.png" github="https://github.com/Maxime-Labbe/Python-SudokuSolver" />
         </div>
         <p className="mt-12 font-semibold text-2xl">More projects on my <a href="https://github.com/Maxime-Labbe">github</a> !</p>
-      </section>
-      <section id="5" className="contact flex flex-col items-center justify-center mt-[-60px]">
+      </FadeSection>
+      <FadeSection id="5" className="contact flex flex-col items-center justify-center mt-[-60px]">
         <h3 className="lg:text-5xl sm:text-3xl text-4xl font-bold">Get in touch</h3>
         <div className="w-full flex flex-col sm:flex-row items-center justify-center sm:gap-10 gap-6 mt-10">
           <a href="mailto:maxime30labbe@gmail.com"><button className="contact-button">Send a mail</button></a>
           <a href="https://www.linkedin.com/in/maxime-labbe-626012293/" target="_blank"><button className="contact-button">Connect on Linkedin</button></a>
           <a href="tel:+33770107148"><button className="contact-button">Make a call</button></a>
         </div>  
-      </section>
+      </FadeSection>
       <Contact orientation="left" elem={[
         { logo: <GithubIcon className="svg-icon w-8 h-8"/>, link: "https://github.com/Maxime-Labbe" },
         { logo: <LinkedinIcon className="svg-icon w-8 h-8"/>, link: "https://www.linkedin.com/in/maxime-labbe-626012293/" },

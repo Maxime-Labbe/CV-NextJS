@@ -15,6 +15,15 @@ p > a {
     height: 650px;
 }
 
+.section-fade {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.section-fade.is-visible {
+  opacity: 1;
+}
+
 section.presentation div {
     width: 90%;
     display: flex;
