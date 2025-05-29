@@ -1,10 +1,9 @@
 import { useFadeInOnScroll } from "../hooks/useFadeInOnScroll";
-import '../home.css'
+import '@/styles/home.css'
 
 function FadeSection(props: React.ComponentProps<"section">) {
   const [ref, visible] = useFadeInOnScroll();
   const mergedClassName = `section-fade${visible ? " is-visible" : ""} ${props.className ?? ""}`;
-  console.log('FadeSection', { visible, className: mergedClassName });
   return (
     <section
       ref={ref}

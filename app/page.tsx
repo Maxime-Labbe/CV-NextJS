@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState, useContext } from "react";
 import Image from "next/image";
-import "./home.css";
+import "@/styles/home.css";
 import Contact from "../components/Contact";
 import Project from "../components/Project";
 import FadeSection from "../components/FadeSection";

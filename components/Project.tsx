@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import Image from "next/image";
 import { AppContext, AppContextType } from "../app/Context";
-import "../project.css"
+import "@/styles/project.css"
 import GithubIcon from "@/public/logo/github.svg";
 import LinkIcon from "@/public/logo/link.svg";
 
