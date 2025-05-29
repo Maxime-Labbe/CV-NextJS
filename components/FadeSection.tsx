@@ -1,4 +1,4 @@
-import { useFadeInOnScroll } from "../hooks/useFadeInOnScroll"; // adjust path as needed
+import { useFadeInOnScroll } from "../hooks/useFadeInOnScroll";
 import '../home.css'
 
 function FadeSection(props: React.ComponentProps<"section">) {

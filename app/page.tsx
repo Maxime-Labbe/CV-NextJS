@@ -2,9 +2,9 @@
 import { useEffect, useState, useContext } from "react";
 import Image from "next/image";
 import "./home.css";
-import Contact from "./components/Contact";
-import Project from "./components/Project";
-import FadeSection from "./components/FadeSection";
+import Contact from "../components/Contact";
+import Project from "../components/Project";
+import FadeSection from "../components/FadeSection";
 import { AppContext, AppContextType } from "./Context";
 import GithubIcon from "../public/logo/github.svg";
 import LinkedinIcon from "../public/logo/linkedin.svg";
