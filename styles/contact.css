@@ -19,8 +19,16 @@
     fill: var(--text-color);
 }
 
+.contact-icon svg.light {
+    fill: var(--background-color);
+}
+
 .contact-icon:hover svg {
     fill: var(--accent-color);
+}
+
+.copied {
+    visibility: hidden;
 }
 
 @media (min-width: 1024px) {
@@ -30,6 +38,14 @@
         height: 100px;
         background-color: var(--text-color);
         bottom: 10px;
+    }
+
+    .line.dark {
+        background-color: var(--text-color);
+    }
+
+    .line.light {
+        background-color: var(--background-color);
     }
 
     .copied {

@@ -14,7 +14,7 @@ import CodingameIcon from "../public/logo/codingame.svg";
 
 export default function Home() {
   const [currentSection,setCurrentSection] = useState(0);
-  const { width } = useContext<AppContextType>(AppContext); 
+  const { width, dark } = useContext<AppContextType>(AppContext); 
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -71,7 +71,7 @@ export default function Home() {
   
 
   return (
-    <main className="main">
+    <main className="main light">
       <FadeSection id="1" className="flex sm:flex-row flex-col items-center justify-center">
         <div className="w-[90%] flex flex-col items-start justify-center text-center">
           <h2 className="md:text-5xl text-3xl font-extrabold">Full-Stack & Python Developer</h2>
@@ -160,10 +160,10 @@ export default function Home() {
         </div>  
       </FadeSection>
       <Contact orientation="left" elem={[
-        { logo: <GithubIcon className="svg-icon w-8 h-8"/>, link: "https://github.com/Maxime-Labbe" },
-        { logo: <LinkedinIcon className="svg-icon w-8 h-8"/>, link: "https://www.linkedin.com/in/maxime-labbe-626012293/" },
-        { logo: <RootmeIcon className="svg-icon w-8 h-8"/>, link: "https://www.root-me.org/SuperP" },
-        { logo: <CodingameIcon className="svg-icon w-8 h-8"/>, link: "https://www.codingame.com/profile/d4ca9edd312a1c1bd8bbb2e73b5682861549375" },
+        { logo: <GithubIcon className={`${dark ? "" : "light"} svg-icon w-8 h-8`}/>, link: "https://github.com/Maxime-Labbe" },
+        { logo: <LinkedinIcon className={`${dark ? "" : "light"} svg-icon w-8 h-8`}/>, link: "https://www.linkedin.com/in/maxime-labbe-626012293/" },
+        { logo: <RootmeIcon className={`${dark ? "" : "light"} svg-icon w-8 h-8`}/>, link: "https://www.root-me.org/SuperP" },
+        { logo: <CodingameIcon className={`svg-icon w-8 h-8`}/>, link: "https://www.codingame.com/profile/d4ca9edd312a1c1bd8bbb2e73b5682861549375" },
         ]}/>
       <Contact orientation="right" elem="maxime30labbe@gmail.com"/>
     </main>

@@ -1,4 +1,6 @@
 import '@/styles/contact.css'
+import { useContext } from 'react';
+import { AppContext, AppContextType } from '@/app/Context';
 
 type ContactProps = {
     orientation: string;
@@ -6,6 +8,7 @@ type ContactProps = {
     };
 
 export default function Contact({ orientation, elem }: ContactProps) {
+  const { dark } = useContext<AppContextType>(AppContext);
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const anchor = e.target as HTMLAnchorElement;
     const copiedMessage = document.querySelector('.copied') as HTMLElement;
@@ -31,7 +34,7 @@ export default function Contact({ orientation, elem }: ContactProps) {
           </li>
         ))}
       </ul>}
-      <div className='line'></div>
+      <div className={`line ${dark ? "dark" : "light"}`}></div>
       <div className='copied'>Mail copied !</div>
     </div>
   );

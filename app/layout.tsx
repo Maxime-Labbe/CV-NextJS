@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={ahrefs.className}>
+      <body className={`${ahrefs.className} dark`}>
         <Context>
           <Navbar />
           {children}

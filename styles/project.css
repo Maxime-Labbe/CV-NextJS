@@ -2,7 +2,10 @@ div.project {
     background-color: rgba(var(--background-color-light-rgb), 1);
     box-shadow: 0 4px 24px 0 rgba(0,0,0,0.5);
     height: 18vh;
-    /* transition: all 0.3s ease-in-out; */
+}
+
+div.project.light {
+    color: var(--text-color);
 }
 
 .project-tech {
